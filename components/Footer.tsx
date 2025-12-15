@@ -8,7 +8,7 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-6 md:px-12">
 
                 {/* Top Section */}
-                <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-12 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-8 md:gap-12 mb-12 md:mb-16">
 
                     {/* Brand Column */}
                     <div className="space-y-4 max-w-xs">
@@ -22,7 +22,7 @@ export default function Footer() {
                     </div>
 
                     {/* Right-aligned Links */}
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 md:justify-self-end">
+                    <div className="grid grid-cols-3 gap-8 md:gap-12 md:justify-self-end">
                         <LinkColumn
                             title="Product"
                             links={["Features", "Integrations", "Enterprise", "Changelog"]}

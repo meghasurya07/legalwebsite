@@ -26,7 +26,7 @@ export default function SecurityPage() {
                         className="mb-8"
                     >
                         <p className="text-zinc-400 font-medium mb-4 uppercase tracking-widest text-sm">Security First</p>
-                        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+                        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
                             Uncompromising <br className="hidden md:block" /> Data Protection
                         </h1>
                     </motion.div>
