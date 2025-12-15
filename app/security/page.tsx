@@ -141,7 +141,7 @@ export default function SecurityPage() {
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">Industry Standards & Compliance</h2>
 
-                        <div className="flex flex-wrap justify-center gap-10 md:gap-16">
+                        <div className="grid grid-cols-2 md:flex md:flex-wrap justify-center gap-6 gap-y-10 md:gap-16">
                             {/* SOC2 */}
                             <div className="flex flex-col items-center gap-4 group">
                                 <div className="w-32 h-32 md:w-36 md:h-36 rounded-2xl border border-zinc-800 bg-zinc-900/30 flex items-center justify-center p-8 group-hover:border-zinc-700 transition-colors">
