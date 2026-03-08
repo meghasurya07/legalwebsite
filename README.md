@@ -14,7 +14,7 @@ This project is a Next.js 14+ (App Router) application configured with TypeScrip
 - Located in `app/page.tsx`.
 - Contains a full-screen Hero section.
 - Minimal aesthetic inspired by Quanta Network.
-- Uses `COMPANY_NAME` as a placeholder.
+- Uses `Wesley` as a placeholder.
 
 ### 3. Navbar
 - Located in `components/Navbar.tsx`.

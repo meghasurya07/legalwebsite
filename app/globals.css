@@ -1,27 +1,71 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #faf9f6;
+  --foreground: #1a1a1a;
+  --border-color: #e5e4df;
+  --bg-cream: #f5f4ef;
+  --bg-beige: #eae8e3;
+  --bg-dark: #1c1c1c;
 }
 
+/* Tailwind v4 Theme Configuration */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-cream: var(--bg-cream);
+  --color-beige: var(--bg-beige);
+  --color-dark: var(--bg-dark);
+  --color-border-subtle: var(--border-color);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-poppins: var(--font-poppins);
+  --font-serif: var(--font-playfair);
+  --color-blue-glow: rgba(0, 102, 255, 0.1);
 }
 
+/* Enforce light theme */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #faf9f6;
+    --foreground: #1a1a1a;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle utility classes */
+.glass-panel {
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.subtle-border {
+  border: 1px solid var(--border-color);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.brand-glow {
+  background: radial-gradient(circle at 50% 0%, var(--color-blue-glow) 0%, transparent 70%);
 }

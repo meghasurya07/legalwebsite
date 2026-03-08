@@ -1,30 +1,23 @@
 'use client';
 
 import SectionWrapper from '@/components/SectionWrapper';
-import { UploadCloud, Cpu, FileText, FileCheck, Search, Shield, Terminal, Database, Code, Check } from 'lucide-react';
+import { UploadCloud, Cpu, FileCheck, Shield, Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function HowItWorks() {
     return (
         <SectionWrapper
             id="how-it-works"
-            className="py-32 relative overflow-hidden"
+            className="py-32 relative bg-background overflow-hidden font-sans"
         >
-            {/* Background Neural Lines */}
-            <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,100 Q500,200 1000,100 T2000,100" stroke="white" strokeWidth="1" fill="none" />
-                <path d="M0,300 Q600,400 1200,300 T2400,300" stroke="white" strokeWidth="0.5" fill="none" />
-                <path d="M0,600 Q400,500 800,600 T1600,600" stroke="white" strokeWidth="0.5" fill="none" />
-            </svg>
-
-            <div className="container mx-auto px-4 relative z-10">
+            <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">
                 <div className="text-center mb-32 relative z-10">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-zinc-100 font-poppins"
+                        className="text-4xl md:text-5xl font-serif text-neutral-900 mb-6"
                     >
                         Your Workflow, Accelerated
                     </motion.h2>
@@ -33,58 +26,44 @@ export default function HowItWorks() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-zinc-400 text-lg max-w-2xl mx-auto"
+                        className="text-neutral-500 text-lg max-w-2xl mx-auto"
                     >
-                        COMPANY_NAME streamlines legal document analysis through a secure, intelligent workflow designed to support accurate, efficient decision-making.
+                        Wesley streamlines legal document analysis through a secure, intelligent workflow designed to support accurate, efficient decision-making.
                     </motion.p>
                 </div>
 
-                <div className="relative max-w-4xl mx-auto">
+                <div className="relative max-w-5xl mx-auto">
                     {/* Central Vertical Line */}
-                    <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 z-0 hidden md:block">
-                        <svg className="h-full w-full overflow-visible" preserveAspectRatio="none">
-                            <defs>
-                                <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                    <stop offset="0%" stopColor="#3b82f6" stopOpacity="0" />
-                                    <stop offset="10%" stopColor="#3b82f6" />
-                                    <stop offset="50%" stopColor="#a855f7" />
-                                    <stop offset="90%" stopColor="#10b981" />
-                                    <stop offset="100%" stopColor="#10b981" stopOpacity="0" />
-                                </linearGradient>
-                            </defs>
-                            <motion.path
-                                d="M 0 0 V 1500" // Extended length to ensure it covers
-                                stroke="url(#gradient)"
-                                strokeWidth="2"
-                                fill="none"
-                                strokeDasharray="4 4"
-                                initial={{ pathLength: 0 }}
-                                whileInView={{ pathLength: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 1.5, ease: "easeInOut" }}
-                            />
-                        </svg>
+                    <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 z-0 hidden md:block border-l border-dashed border-neutral-200">
+                        <motion.div
+                            className="w-1 bg-neutral-900/5 absolute -left-0.5 top-0 bottom-0 filter blur-sm"
+                            initial={{ scaleY: 0 }}
+                            whileInView={{ scaleY: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1.5, ease: "easeInOut" }}
+                            style={{ transformOrigin: "top" }}
+                        />
                     </div>
 
-                    {/* Step 01: Upload & Secure (Blue Theme) */}
-                    <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center mb-32">
+                    {/* Step 01: Upload & Secure */}
+                    <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center mb-32">
                         {/* Right: Text */}
                         <motion.div
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="order-2 md:order-1 text-left md:text-right pr-0 md:pr-8 relative"
+                            className="order-2 md:order-1 text-left md:text-right pr-0 md:pr-12 relative"
                         >
-                            <div className="absolute -top-20 -right-10 text-9xl font-bold opacity-[0.03] select-none pointer-events-none hidden md:block">01</div>
-                            <div className="inline-flex items-center gap-2 mb-2 text-blue-400 font-mono text-xs uppercase tracking-widest">
-                                <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                                Step 01
+                            <div className="absolute -top-16 -right-8 text-8xl font-serif opacity-5 select-none pointer-events-none hidden md:block text-neutral-900">01</div>
+                            <div className="inline-flex items-center gap-2 mb-3 text-neutral-400 font-medium text-[11px] uppercase tracking-widest">
+                                <span className="w-1.5 h-1.5 rounded-full bg-neutral-300"></span>
+                                Phase 01
                             </div>
-                            <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-100 mb-4">
+                            <h3 className="text-2xl font-serif text-neutral-900 mb-4">
                                 Upload & Integrate
                             </h3>
-                            <p className="text-zinc-400 leading-relaxed">
+                            <p className="text-neutral-500 leading-relaxed text-[15px]">
                                 Upload contracts into a secure, encrypted environment. We protect sensitive legal information with enterprise-grade security protocols.
                             </p>
                         </motion.div>
@@ -95,62 +74,56 @@ export default function HowItWorks() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="order-1 md:order-2 pl-0 md:pl-8 relative"
+                            className="order-1 md:order-2 pl-0 md:pl-12 relative"
                         >
-                            <div className="overflow-hidden p-6 bg-zinc-900/50 backdrop-blur-sm border border-white/10 rounded-xl relative shadow-[0_0_40px_-10px_rgba(59,130,246,0.3)]">
-                                <div className="pointer-events-none absolute -inset-px opacity-20 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.2),transparent_70%)]"></div>
-
-                                <div className="absolute -left-11 top-1/2 -translate-y-1/2 w-3 h-3 bg-blue-500 rounded-full border-4 border-zinc-950 hidden md:block z-20 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
+                            <div className="overflow-hidden p-8 bg-cream border border-border-subtle rounded-sm relative shadow-sm">
+                                <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-neutral-900 rounded-full hidden md:block z-20 shadow-sm border border-white ring-4 ring-cream"></div>
 
                                 <div className="space-y-4 relative z-10">
-                                    {/* Upload Item */}
-                                    <div className="relative flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/5 overflow-hidden">
-                                        <div className="w-8 h-8 rounded bg-zinc-800 flex items-center justify-center relative z-10">
-                                            <UploadCloud className="w-4 h-4 text-zinc-500" />
+                                    <div className="relative flex items-center gap-4 p-4 rounded-sm bg-white border border-border-subtle shadow-sm overflow-hidden">
+                                        <div className="w-10 h-10 rounded-sm bg-cream border border-neutral-100 flex items-center justify-center relative z-10">
+                                            <UploadCloud className="w-5 h-5 text-neutral-700" />
                                         </div>
-                                        <div className="h-2 w-24 bg-zinc-700 rounded-full relative z-10"></div>
-                                        {/* Scanning/Uploading effect */}
-                                        <motion.div
-                                            className="absolute inset-0 w-1/3 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent skew-x-12 opacity-50 mix-blend-plus-lighter"
-                                            animate={{ x: ['-100%', '300%'] }}
-                                            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                                        />
-                                    </div>
-
-                                    {/* Processing Items */}
-                                    <div className="space-y-2">
-                                        <div className="p-3 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-start gap-3">
-                                            <Shield className="w-4 h-4 text-blue-400 mt-0.5" />
-                                            <div className="space-y-1.5 w-full">
-                                                <div className="h-2 w-full bg-blue-400/20 rounded-full"></div>
-                                                <div className="h-2 w-2/3 bg-blue-400/20 rounded-full"></div>
+                                        <div className="flex-1">
+                                            <div className="text-xs font-semibold text-neutral-900 mb-1.5">Uploading NDA.pdf</div>
+                                            <div className="h-1.5 w-full bg-neutral-100 rounded-sm overflow-hidden relative">
+                                                <motion.div
+                                                    className="absolute top-0 left-0 h-full bg-neutral-900"
+                                                    animate={{ width: ['0%', '100%'] }}
+                                                    transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                                                />
                                             </div>
                                         </div>
+                                    </div>
+
+                                    <div className="p-3 rounded-sm bg-white border border-border-subtle flex items-center gap-3 shadow-sm">
+                                        <Shield className="w-4 h-4 text-emerald-600" />
+                                        <div className="text-xs font-medium text-neutral-600">Encrypted Transport</div>
                                     </div>
                                 </div>
                             </div>
                         </motion.div>
                     </div>
 
-                    {/* Step 02: Analysis (Purple Theme) */}
-                    <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center mb-32">
+                    {/* Step 02: Analysis */}
+                    <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center mb-32">
                         {/* Right: Text (Actually Left in DOM) */}
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="order-2 md:order-2 pl-0 md:pl-8 relative"
+                            className="order-2 md:order-2 pl-0 md:pl-12 relative"
                         >
-                            <div className="absolute -top-20 -left-10 text-9xl font-bold opacity-[0.03] select-none pointer-events-none hidden md:block">02</div>
-                            <div className="inline-flex items-center gap-2 mb-2 text-purple-400 font-mono text-xs uppercase tracking-widest">
-                                <span className="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span>
-                                Step 02
+                            <div className="absolute -top-16 -left-8 text-8xl font-serif opacity-5 select-none pointer-events-none hidden md:block text-neutral-900">02</div>
+                            <div className="inline-flex items-center gap-2 mb-3 text-neutral-400 font-medium text-[11px] uppercase tracking-widest">
+                                <span className="w-1.5 h-1.5 rounded-full bg-neutral-300"></span>
+                                Phase 02
                             </div>
-                            <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-100 mb-4">
+                            <h3 className="text-2xl font-serif text-neutral-900 mb-4">
                                 Deep Analysis
                             </h3>
-                            <p className="text-zinc-400 leading-relaxed">
+                            <p className="text-neutral-500 leading-relaxed text-[15px]">
                                 Our AI scans for high-risk clauses and compliance gaps, identifying inconsistencies based on your specific playbook boundaries.
                             </p>
                         </motion.div>
@@ -161,56 +134,46 @@ export default function HowItWorks() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="order-1 md:order-1 pr-0 md:pr-8 relative"
+                            className="order-1 md:order-1 pr-0 md:pr-12 relative"
                         >
-                            <div className="overflow-hidden p-6 bg-zinc-900/50 backdrop-blur-sm border border-white/10 rounded-xl relative shadow-[0_0_40px_-10px_rgba(168,85,247,0.3)]">
-                                <div className="pointer-events-none absolute -inset-px opacity-20 bg-[radial-gradient(circle_at_50%_0%,rgba(168,85,247,0.2),transparent_70%)]"></div>
+                            <div className="overflow-hidden p-8 bg-cream border border-border-subtle rounded-sm relative shadow-sm">
+                                <div className="absolute -right-10 top-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-neutral-900 rounded-full hidden md:block z-20 shadow-sm border border-white ring-4 ring-cream"></div>
 
-                                <div className="absolute -right-11 top-1/2 -translate-y-1/2 w-3 h-3 bg-purple-500 rounded-full border-4 border-zinc-950 hidden md:block z-20 shadow-[0_0_10px_rgba(168,85,247,0.5)]"></div>
-
-                                <div className="flex flex-col items-center justify-center py-4 relative z-10">
+                                <div className="flex flex-col items-center justify-center py-6 relative z-10">
                                     <div className="relative">
-                                        <div className="absolute inset-0 bg-purple-500/20 blur-xl rounded-full mix-blend-plus-lighter animate-pulse"></div>
-                                        <div className="w-20 h-20 bg-zinc-900 border border-purple-500/50 rounded-xl flex items-center justify-center relative z-10 shadow-[0_0_30px_-5px_rgba(168,85,247,0.3)]">
-                                            <Cpu className="w-8 h-8 text-purple-400" />
+                                        <div className="w-20 h-20 bg-white border border-border-subtle rounded-sm flex items-center justify-center relative z-10 shadow-sm">
+                                            <Cpu className="w-8 h-8 text-neutral-700" />
                                         </div>
 
-                                        {/* Orbiting nodes */}
-                                        <motion.div
-                                            className="absolute top-1/2 left-1/2 w-32 h-32 border border-purple-500/30 rounded-full -translate-x-1/2 -translate-y-1/2"
-                                            animate={{ rotate: 360 }}
-                                            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                                        >
-                                            <div className="absolute top-0 left-1/2 w-2 h-2 bg-purple-400 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-                                        </motion.div>
+                                        {/* Removed decorative orbiting Nodes */}
                                     </div>
-                                    <div className="mt-6 font-mono text-xs text-purple-400 bg-purple-500/10 px-3 py-1 rounded border border-purple-500/20">
-                                        Analyzing Context...
+                                    <div className="mt-8 font-mono text-[11px] text-neutral-600 tracking-wider">
+                                        Scanning against playbook...
                                     </div>
                                 </div>
                             </div>
                         </motion.div>
                     </div>
 
-                    {/* Step 03: Action (Zinc/Green Theme) */}
-                    <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                    {/* Step 03: Action */}
+                    <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center">
                         {/* Right: Text */}
                         <motion.div
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="order-2 md:order-1 text-left md:text-right pr-0 md:pr-8 relative"
+                            className="order-2 md:order-1 text-left md:text-right pr-0 md:pr-12 relative"
                         >
-                            <div className="absolute -top-20 -right-10 text-9xl font-bold opacity-[0.03] select-none pointer-events-none hidden md:block">03</div>
-                            <div className="inline-flex items-center gap-2 mb-2 text-zinc-100 font-mono text-xs uppercase tracking-widest">
-                                <span className="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-                                Step 03
+                            <div className="absolute -top-16 -right-8 text-8xl font-serif opacity-5 select-none pointer-events-none hidden md:block text-neutral-900">03</div>
+                            <div className="inline-flex items-center gap-2 mb-3 text-neutral-400 font-medium text-[11px] uppercase tracking-widest">
+                                <span className="w-1.5 h-1.5 rounded-full bg-neutral-300"></span>
+                                Phase 03
                             </div>
-                            <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-zinc-100 to-zinc-400 mb-4">
+                            <h3 className="text-2xl font-serif text-neutral-900 mb-4">
                                 Actionable Insights
                             </h3>
-                            <p className="text-zinc-400 leading-relaxed">
+                            <p className="text-neutral-500 leading-relaxed text-[15px]">
                                 Get a structured report highlighting risks and opportunities. Export findings directly or share them with stakeholders for immediate action.
                             </p>
                         </motion.div>
@@ -221,34 +184,28 @@ export default function HowItWorks() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="order-1 md:order-2 pl-0 md:pl-8 relative"
+                            className="order-1 md:order-2 pl-0 md:pl-12 relative"
                         >
-                            <div className="overflow-hidden p-6 bg-zinc-900/50 backdrop-blur-sm border border-white/10 rounded-xl relative shadow-[0_0_40px_-10px_rgba(255,255,255,0.1)]">
-                                <div className="pointer-events-none absolute -inset-px opacity-20 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.2),transparent_70%)]"></div>
+                            <div className="overflow-hidden p-8 bg-cream border border-border-subtle rounded-sm relative shadow-sm">
+                                <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-neutral-900 rounded-full hidden md:block z-20 shadow-sm border border-white ring-4 ring-cream"></div>
 
-                                <div className="absolute -left-11 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full border-4 border-zinc-950 hidden md:block z-20 shadow-[0_0_10px_rgba(255,255,255,0.5)]"></div>
-
-                                <div className="flex gap-4 justify-center py-4 relative h-40 items-center">
+                                <div className="flex gap-4 justify-center py-6 relative items-center">
                                     {/* Report File */}
                                     <motion.div
                                         initial={{ opacity: 0, y: 10 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ delay: 0.2 }}
-                                        className="w-32 p-4 rounded-lg bg-zinc-950 border border-white/10 flex flex-col gap-3 relative z-10"
+                                        className="w-36 p-5 rounded-sm bg-white border border-border-subtle flex flex-col gap-4 relative z-10 shadow-sm"
                                     >
-                                        <div className="p-2 bg-green-500/10 rounded-md w-fit">
-                                            <FileCheck className="w-4 h-4 text-green-400" />
+                                        <div className="p-2 border border-neutral-100 bg-cream rounded-[2px] w-fit">
+                                            <FileCheck className="w-4 h-4 text-neutral-600" />
                                         </div>
                                         <div>
-                                            <div className="text-xs font-bold text-zinc-300 mb-1">Final Report</div>
-                                            <div className="space-y-1">
-                                                <div className="h-1 w-full bg-zinc-800 rounded-full"></div>
-                                                <div className="h-1 w-2/3 bg-zinc-800 rounded-full"></div>
+                                            <div className="text-xs font-semibold text-neutral-900 mb-2">Final Report</div>
+                                            <div className="space-y-1.5">
+                                                <div className="h-1 w-full bg-neutral-200 rounded-sm"></div>
+                                                <div className="h-1 w-2/3 bg-neutral-200 rounded-sm"></div>
                                             </div>
-                                        </div>
-                                        {/* Verified Badge */}
-                                        <div className="absolute -top-2 -right-2 bg-green-500 text-black text-[10px] font-bold px-1.5 py-0.5 rounded shadow-lg">
-                                            READY
                                         </div>
                                     </motion.div>
 
@@ -257,9 +214,9 @@ export default function HowItWorks() {
                                         initial={{ opacity: 0, scale: 0.8 }}
                                         whileInView={{ opacity: 1, scale: 1 }}
                                         transition={{ delay: 0.4 }}
-                                        className="absolute bottom-2 bg-green-500/10 border border-green-500/20 text-green-400 text-xs px-3 py-1 rounded-full font-mono flex items-center gap-1"
+                                        className="absolute bottom-4 right-4 bg-white border border-emerald-200 text-emerald-700 text-[11px] px-3 py-1.5 rounded-sm font-medium flex items-center gap-1.5 shadow-sm"
                                     >
-                                        <Check className="w-3 h-3" /> Export Complete
+                                        <Check className="w-3 h-3" /> Ready
                                     </motion.div>
                                 </div>
                             </div>

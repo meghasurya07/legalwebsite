@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import LoadingScreen from '@/components/LoadingScreen';
 
@@ -10,6 +11,8 @@ import ValueHighlights from '@/components/landing/ValueHighlights';
 import ProductShowcase from '@/components/landing/ProductShowcase';
 import HowItWorks from '@/components/landing/HowItWorks';
 import Metrics from '@/components/landing/Metrics';
+import HeroVideoSequencer from '@/components/landing/HeroVideoSequencer';
+import Compliance from '@/components/landing/Compliance';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,7 +27,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative min-h-screen bg-black text-white font-sans selection:bg-neutral-700">
+    <main className="relative min-h-screen bg-background text-foreground font-sans selection:bg-neutral-200">
       <AnimatePresence mode="wait">
         {isLoading && <LoadingScreen />}
       </AnimatePresence>
@@ -36,48 +39,47 @@ export default function Home() {
           transition={{ duration: 1 }}
         >
 
-
           {/* Hero Section */}
-          <section className="relative flex h-[80vh] min-h-[600px] w-full flex-col items-center justify-center px-6 md:px-12 overflow-hidden">
-            {/* Background Neural Lines */}
-            <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0,100 Q500,200 1000,100 T2000,100" stroke="white" strokeWidth="1" fill="none" />
-              <path d="M0,300 Q600,400 1200,300 T2400,300" stroke="white" strokeWidth="0.5" fill="none" />
-              <path d="M0,600 Q400,500 800,600 T1600,600" stroke="white" strokeWidth="0.5" fill="none" />
-            </svg>
-
-            {/* Radial Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl pointer-events-none" />
+          <section className="relative flex min-h-[90vh] w-full flex-col items-center justify-center pt-32 pb-24 px-6 md:px-12 overflow-hidden bg-black">
+            <HeroVideoSequencer />
 
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
-              className="relative z-10 mx-auto max-w-4xl text-center"
+              className="relative z-10 mx-auto max-w-5xl text-center flex flex-col items-center"
             >
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.6 }}
-                transition={{ delay: 0.5, duration: 1 }}
-                className="text-xs font-poppins uppercase tracking-[0.2em] text-white mb-6"
-              >
-                The New Standard for Legal Work
-              </motion.p>
-
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6 font-poppins leading-tight">
-                Analyze Contracts.
-                <span className="block text-2xl md:text-4xl font-normal text-neutral-500 mt-3 tracking-normal">
-                  Make Better Legal Decisions.
+              <div className="mb-8 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 backdrop-blur-md border border-white/20">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-white"></span>
                 </span>
+                <span className="text-xs font-medium tracking-wide text-white/90">INTRODUCING WESLEY</span>
+              </div>
+
+              <h1 className="mb-8 font-playfair text-5xl font-medium tracking-tight text-white md:text-7xl lg:text-8xl">
+                Analyze Contracts. <br />
+                <span className="text-white/70 italic">Make Better Legal Decisions.</span>
               </h1>
 
-              <p className="mx-auto max-w-2xl text-base text-neutral-400 md:text-lg leading-relaxed mb-8 font-sans">
-                COMPANY_NAME provides AI-powered legal intelligence to help teams review documents faster, identify risk, and act with confidence.
+              <p className="mb-12 max-w-2xl text-lg text-white/60 md:text-xl font-sans leading-relaxed">
+                The world&apos;s most advanced AI for legal professionals. <br />
+                Draft, search, and reason over documents with partner-level precision.
               </p>
 
-              <div className="flex flex-wrap items-center justify-center gap-4">
-                <Link href="/request-demo" className="rounded-full bg-white px-8 py-3 text-sm font-semibold text-black hover:bg-neutral-200 transition-all font-poppins">
+              <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <Link
+                  href="/request-demo"
+                  className="group flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-neutral-900 transition-all hover:bg-neutral-100 hover:scale-[1.02] shadow-xl cursor-pointer"
+                >
                   Request a Demo
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+                <Link
+                  href="/solutions"
+                  className="rounded-full border border-white/30 bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-[1.02] cursor-pointer"
+                >
+                  Explore Platform
                 </Link>
               </div>
             </motion.div>
@@ -88,11 +90,15 @@ export default function Home() {
           <ProductShowcase />
           <HowItWorks />
           <Metrics />
+          <Compliance />
 
           {/* CTA Section */}
-          <section className="w-full py-32 flex flex-col items-center justify-center bg-gradient-to-t from-neutral-900 via-black to-black border-t border-white/5">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 text-center font-poppins">Ready to modernize your Legal Work?</h2>
-            <Link href="/request-demo" className="rounded-full bg-white px-10 py-5 text-lg font-bold text-black hover:bg-neutral-200 transition-all shadow-xl shadow-white/5">
+          <section className="w-full py-32 flex flex-col items-center justify-center bg-dark text-white border-t border-border-subtle">
+            <h2 className="text-4xl md:text-5xl font-serif text-white mb-6 text-center">Ready to modernize your legal work?</h2>
+            <p className="text-neutral-400 text-lg mb-10 max-w-xl text-center">
+              Join leading law firms and enterprise legal teams using Wesley to accelerate document review and strategy.
+            </p>
+            <Link href="/request-demo" className="rounded-sm bg-white px-10 py-4 text-base font-medium text-black hover:bg-neutral-100 transition-all shadow-xl shadow-neutral-900/50">
               Request a Demo
             </Link>
           </section>

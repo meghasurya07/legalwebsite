@@ -6,19 +6,19 @@ import { useEffect, useRef } from 'react';
 
 const stats = [
     {
-        value: 0,
+        value: 10,
         suffix: "+",
         label: "Law Firms",
         description: "Trusting us with their critical data"
     },
     {
-        value: 0,
+        value: 100,
         suffix: "+",
         label: "Lawyers",
         description: "Streamlining operations globally"
     },
     {
-        value: 0,
+        value: 1,
         suffix: "M+",
         label: "Contracts Analyzed",
         description: "Processed securely across our network"
@@ -30,7 +30,7 @@ const stats = [
         description: "Industry-leading precision"
     },
     {
-        value: 0,
+        value: 10,
         suffix: "k+",
         label: "Hours Saved",
         description: "Automating routine legal review"
@@ -65,52 +65,45 @@ function CounterItem({ stat, index }: { stat: typeof stats[0], index: number }) 
         >
             {/* Vertical Separator */}
             {index !== 0 && (
-                <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 h-16 w-px bg-white/10" />
+                <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 h-16 w-px bg-neutral-200" />
             )}
 
-            <h3 className="text-4xl md:text-5xl font-bold text-white font-poppins mb-3 tracking-tight">
+            <h3 className="text-4xl md:text-5xl font-serif text-neutral-900 mb-3 tracking-tight">
                 <motion.span>{displayValue}</motion.span>{stat.suffix}
             </h3>
-            <p className="text-white font-medium text-base mb-2">{stat.label}</p>
-            <p className="text-neutral-500 text-xs leading-relaxed px-2">{stat.description}</p>
+            <p className="font-sans text-neutral-900 font-medium text-base mb-2">{stat.label}</p>
+            <p className="font-sans text-neutral-500 text-xs leading-relaxed px-2">{stat.description}</p>
         </motion.div>
     );
 }
 
 export default function Metrics() {
     return (
-        <SectionWrapper id="metrics" className="py-24 relative overflow-hidden border-t border-white/5">
-            {/* Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-full bg-black -z-20" />
+        <SectionWrapper id="metrics" className="py-24 relative overflow-hidden bg-beige border-t border-b border-border-subtle font-sans">
+            {/* Removed vibe-coded background grid pattern */}
 
-            {/* Background Neural Lines */}
-            <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,100 Q500,200 1000,100 T2000,100" stroke="white" strokeWidth="1" fill="none" />
-                <path d="M0,300 Q600,400 1200,300 T2400,300" stroke="white" strokeWidth="0.5" fill="none" />
-                <path d="M0,600 Q400,500 800,600 T1600,600" stroke="white" strokeWidth="0.5" fill="none" />
-            </svg>
-
-            <div className="flex flex-col items-center justify-center text-center mb-16">
+            <div className="flex flex-col items-center justify-center text-center mb-16 relative z-10 mx-auto px-6 max-w-2xl">
                 <motion.span
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-sm md:text-base text-neutral-500 font-poppins uppercase tracking-widest mb-4"
+                    className="text-[11px] text-neutral-400 font-medium uppercase tracking-widest mb-4 inline-flex items-center gap-2"
                 >
-                    Impact
+                    <span className="w-1.5 h-1.5 rounded-full bg-neutral-300" />
+                    Global Impact
                 </motion.span>
                 <motion.h2
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className="text-3xl md:text-5xl font-bold text-white font-poppins"
+                    className="text-3xl md:text-5xl font-serif text-neutral-900"
                 >
-                    By The Numbers
+                    Designed for scale. Built for trust.
                 </motion.h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 relative max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 relative z-10 max-w-7xl mx-auto px-4">
                 {stats.map((stat, index) => (
                     <CounterItem key={index} stat={stat} index={index} />
                 ))}
