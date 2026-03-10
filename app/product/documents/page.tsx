@@ -2,32 +2,32 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, Search, FileText, Globe, Sparkles } from 'lucide-react';
+import { ArrowRight, Upload, Search, FolderKanban, Shield } from 'lucide-react';
 
 const CAPABILITIES = [
     {
+        icon: Upload,
+        title: 'Bulk Upload',
+        description: 'Upload thousands of documents at once. Wesley indexes and organizes them automatically for instant access.',
+    },
+    {
         icon: Search,
-        title: 'Deep Research',
-        description: 'Go beyond surface-level answers. Wesley researches complex legal questions across jurisdictions and practice areas.',
+        title: 'Semantic Search',
+        description: 'Go beyond keyword matching. Search by concept, clause type, or legal meaning across your entire repository.',
     },
     {
-        icon: FileText,
-        title: 'Document Analysis',
-        description: 'Upload contracts, briefs, or filings. Ask questions about specific clauses, risks, obligations, and deadlines.',
+        icon: FolderKanban,
+        title: 'Project Organization',
+        description: 'Group documents into projects by matter, deal, or client. Keep analysis scoped and your work organized.',
     },
     {
-        icon: Globe,
-        title: 'Source Integration',
-        description: 'Ground every answer in trusted sources. Wesley cites its reasoning so you can verify and build on its output.',
-    },
-    {
-        icon: Sparkles,
-        title: 'Drafting',
-        description: 'Draft memos, client alerts, and contract language. Wesley adapts to your tone and the standards of your practice.',
+        icon: Shield,
+        title: 'Secure by Default',
+        description: 'Enterprise-grade encryption, strict access controls, and full audit trails. Your documents never leave your environment.',
     },
 ];
 
-export default function AssistantPage() {
+export default function DocumentsPage() {
     return (
         <main className="min-h-screen bg-background text-foreground pt-20">
             {/* Hero */}
@@ -39,7 +39,7 @@ export default function AssistantPage() {
                 >
                     <Link href="/product/overview" className="hover:text-neutral-900 transition-colors">Platform Overview</Link>
                     {' / '}
-                    <span className="text-neutral-900">Assistant</span>
+                    <span className="text-neutral-900">Documents</span>
                 </motion.p>
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ export default function AssistantPage() {
                     transition={{ delay: 0.05 }}
                     className="text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight mb-8 leading-[1.05]"
                 >
-                    An Intelligent <br />Legal Coworker
+                    Your Legal <br />Knowledge Base
                 </motion.h1>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,7 @@ export default function AssistantPage() {
                     transition={{ delay: 0.1 }}
                     className="text-xl md:text-2xl text-neutral-500 max-w-2xl leading-relaxed"
                 >
-                    Ask questions, analyze documents, and draft legal work. Wesley brings domain-specific intelligence to every conversation.
+                    Securely store, organize, and analyze legal documents at scale. Search by meaning, not just keywords.
                 </motion.p>
             </section>
 
@@ -68,31 +68,40 @@ export default function AssistantPage() {
                     className="relative w-full aspect-[16/9] bg-cream rounded-xl border border-border-subtle overflow-hidden"
                 >
                     <div className="absolute inset-0 flex flex-col">
-                        {/* Mock UI Header */}
                         <div className="flex items-center gap-3 px-6 py-4 border-b border-border-subtle bg-white">
                             <div className="w-3 h-3 rounded-full bg-neutral-200" />
                             <div className="w-3 h-3 rounded-full bg-neutral-200" />
                             <div className="w-3 h-3 rounded-full bg-neutral-200" />
-                            <span className="ml-4 text-sm text-neutral-400 font-medium">Wesley Assistant</span>
+                            <span className="ml-4 text-sm text-neutral-400 font-medium">Documents</span>
                         </div>
-                        {/* Mock Chat */}
-                        <div className="flex-1 p-8 flex flex-col justify-center items-center gap-6">
-                            <p className="text-2xl md:text-4xl font-serif text-neutral-300 text-center">
-                                Let&apos;s tackle your legal<br />questions together.
-                            </p>
-                            <div className="w-full max-w-lg bg-white rounded-lg border border-border-subtle px-6 py-4 flex items-center gap-3">
-                                <span className="text-neutral-400 text-sm flex-grow">Ask Wesley anything...</span>
-                                <div className="bg-neutral-900 text-white text-xs font-medium px-4 py-2 rounded-md">Ask Wesley</div>
+                        <div className="flex-1 p-8">
+                            <div className="flex items-center gap-3 mb-8">
+                                <div className="bg-white rounded-lg border border-border-subtle px-4 py-2.5 flex-grow flex items-center gap-2">
+                                    <Search className="w-4 h-4 text-neutral-400" />
+                                    <span className="text-neutral-400 text-sm">Search documents...</span>
+                                </div>
+                                <div className="bg-neutral-900 text-white text-xs font-medium px-4 py-2.5 rounded-lg">Upload</div>
+                            </div>
+                            <div className="space-y-3">
+                                {['Project Alpha — M&A Due Diligence', 'Regulatory Compliance Review', 'Client Onboarding Package'].map((name, i) => (
+                                    <div key={i} className="bg-white rounded-lg border border-border-subtle px-5 py-4 flex items-center justify-between">
+                                        <div className="flex items-center gap-3">
+                                            <FolderKanban className="w-4 h-4 text-neutral-400" />
+                                            <span className="text-sm font-medium text-neutral-700">{name}</span>
+                                        </div>
+                                        <span className="text-xs text-neutral-400">{Math.floor(Math.random() * 200 + 20)} files</span>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
                 </motion.div>
             </section>
 
-            {/* Capabilities Grid */}
+            {/* Capabilities */}
             <section className="border-t border-border-subtle bg-cream">
                 <div className="max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32">
-                    <h2 className="text-3xl md:text-4xl font-serif mb-16">What the Assistant can do</h2>
+                    <h2 className="text-3xl md:text-4xl font-serif mb-16">Built for scale</h2>
                     <div className="grid md:grid-cols-2 gap-12 md:gap-16">
                         {CAPABILITIES.map((cap, index) => (
                             <motion.div
@@ -119,7 +128,7 @@ export default function AssistantPage() {
             {/* CTA */}
             <section className="border-t border-border-subtle">
                 <div className="max-w-7xl mx-auto px-6 md:px-12 py-24 flex flex-col md:flex-row items-center justify-between gap-8">
-                    <h2 className="text-3xl md:text-4xl font-serif">Experience it firsthand.</h2>
+                    <h2 className="text-3xl md:text-4xl font-serif">See your documents come alive.</h2>
                     <Link
                         href="/request-demo"
                         className="flex items-center gap-2 rounded-full bg-neutral-900 px-8 py-4 text-base font-semibold text-white hover:bg-neutral-800 transition-colors whitespace-nowrap"

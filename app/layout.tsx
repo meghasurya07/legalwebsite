@@ -26,7 +26,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Wesley | Legal Intelligence",
+  title: "Wesley",
   description: "The new standard for legal work. AI-powered legal intelligence for modern teams.",
 };
 

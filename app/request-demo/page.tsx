@@ -3,12 +3,10 @@
 import { motion } from 'framer-motion';
 import RequestDemoForm from '@/components/RequestDemoForm';
 import TrustedBy from '@/components/landing/TrustedBy';
-import Navbar from '@/components/Navbar';
 
 export default function RequestDemoPage() {
     return (
-        <main className="relative min-h-screen bg-background text-foreground font-sans">
-            <Navbar />
+        <main className="relative min-h-screen bg-background text-foreground font-sans pt-20">
 
             {/* Hero + Form Section */}
             <section className="relative min-h-screen pt-24 pb-16 px-6 md:px-12 flex items-center justify-center overflow-hidden">

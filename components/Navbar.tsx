@@ -25,13 +25,10 @@ const NAV_LINKS: NavItem[] = [
         label: 'Product',
         hasDropdown: true,
         subItems: [
-            { label: 'Overview', href: '/product/overview', description: 'The AI workspace for legal work' },
-            { label: 'Assistant', href: '/product/assistant', description: 'Ask questions, analyze documents, draft legal work' },
-            { label: 'Case Workspace', href: '/product/case-workspace', description: 'AI chats scoped to individual matters' },
-            { label: 'Document Intelligence', href: '/product/document-intelligence', description: 'Upload, search, and reason over legal documents' },
-            { label: 'Legal Research', href: '/product/legal-research', description: 'Grounded answers from trusted legal sources' },
-            { label: 'Portal', href: '/product/portal', description: 'Client-facing access to insights and deliverables' },
-            { label: 'Workflows', href: '/product/workflows', description: 'Automate repeatable legal tasks', badge: 'Coming soon' },
+            { label: 'Overview', href: '/product/overview', description: 'A unified view of how Wesley works together' },
+            { label: 'Assistant', href: '/product/assistant', description: 'Ask questions, analyze documents, and draft legal work' },
+            { label: 'Documents', href: '/product/documents', description: 'Organize, search, and reason over thousands of files' },
+            { label: 'Workflows', href: '/product/workflows', description: 'Run pre-built legal workflows or build your own' },
         ]
     },
     {
@@ -39,11 +36,9 @@ const NAV_LINKS: NavItem[] = [
         label: 'Solutions',
         hasDropdown: true,
         subItems: [
-            { label: 'Law Firms', href: '/solutions/law-firms', description: 'Partner-level insights for firm-wide value' },
-            { label: 'In-House Legal Teams', href: '/solutions/in-house-teams', description: 'Reduce risk and reliance on outside counsel' },
-            { label: 'Transactional Work', href: '/solutions/transactional-work', description: 'Accelerate deals without compromising details' },
-            { label: 'Litigation', href: '/solutions/litigation', description: 'Strategy-first workflows to win more cases' },
-            { label: 'M&A & Due Diligence', href: '/solutions/ma-due-diligence', description: 'High-stakes analysis for critical deals' },
+            { label: 'Law Firms', href: '/solutions/law-firms', description: 'Scale your practice without scaling headcount' },
+            { label: 'In-House Teams', href: '/solutions/in-house-teams', description: 'Do more with less. Advise with confidence.' },
+            { label: 'Litigation', href: '/solutions/litigation', description: 'Win more cases with deeper analysis' },
         ]
     },
     { href: '/customers', label: 'Customers' },
@@ -64,98 +59,79 @@ const NAV_LINKS: NavItem[] = [
 const LoginLink = ({ className }: { className?: string }) => (
     <Link
         href="/login"
-        className={`text-[13px] font-medium transition-colors hover:text-black cursor-pointer ${className}`}
+        className={`text-[13px] font-medium transition-colors cursor-pointer ${className}`}
     >
         Login
     </Link>
 );
 
-const NewsMegaMenu = ({ onClose }: { onClose: () => void }) => {
+const NewsMegaMenu = ({ onClose, isHomePage }: { onClose: () => void; isHomePage: boolean }) => {
+    const bg = isHomePage ? 'bg-[#0a0a0a] border-b border-white/10' : 'bg-white border-b border-neutral-200';
+    const borderCol = isHomePage ? 'border-white/10' : 'border-neutral-200';
+    const heading = isHomePage ? 'text-neutral-300 group-hover:text-white' : 'text-neutral-700 group-hover:text-neutral-900';
+    const sub = isHomePage ? 'text-neutral-400' : 'text-neutral-500';
+    const card = isHomePage ? 'text-neutral-300 group-hover:text-white' : 'text-neutral-700 group-hover:text-neutral-900';
+    const cardBg = isHomePage ? 'bg-white/5 border-white/10' : 'bg-neutral-100 border-neutral-200';
+    const viewAll = isHomePage ? 'text-neutral-400 hover:text-white' : 'text-neutral-500 hover:text-neutral-900';
+    const arrowCol = isHomePage ? 'text-neutral-400' : 'text-neutral-400';
+
     return (
         <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-[64px] left-0 w-full bg-white border-b border-neutral-200 shadow-xl shadow-neutral-200/20 z-30 font-sans"
+            className={`absolute top-[64px] left-0 w-full shadow-2xl z-30 font-sans ${bg}`}
             onMouseLeave={onClose}
         >
             <div className="max-w-7xl mx-auto px-8 py-10 grid grid-cols-12 gap-12">
-                {/* Left Column: Navigation */}
-                <div className="col-span-3 space-y-8 border-r border-neutral-100 pr-8">
+                <div className={`col-span-3 space-y-8 border-r ${borderCol} pr-8`}>
                     <div className="group">
                         <Link href="/blog" className="block" onClick={onClose}>
-                            <h3 className="text-lg font-medium text-neutral-900 mb-2 flex items-center gap-2 group-hover:text-black transition-colors">
-                                Blog <ArrowRight size={16} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-neutral-400" />
+                            <h3 className={`text-lg font-medium mb-2 flex items-center gap-2 transition-colors ${heading}`}>
+                                Blog <ArrowRight size={16} className={`opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all ${arrowCol}`} />
                             </h3>
-                            <p className="text-sm text-neutral-500 leading-relaxed">Articles, insights, and updates from the Wesley team.</p>
+                            <p className={`text-sm leading-relaxed ${sub}`}>Articles, insights, and updates from the Wesley team.</p>
                         </Link>
                     </div>
                     <div className="group">
                         <Link href="/newsroom" className="block" onClick={onClose}>
-                            <h3 className="text-lg font-medium text-neutral-900 mb-2 flex items-center gap-2 group-hover:text-black transition-colors">
-                                Newsroom <ArrowRight size={16} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-neutral-400" />
+                            <h3 className={`text-lg font-medium mb-2 flex items-center gap-2 transition-colors ${heading}`}>
+                                Newsroom <ArrowRight size={16} className={`opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all ${arrowCol}`} />
                             </h3>
-                            <p className="text-sm text-neutral-500 leading-relaxed">Press releases, announcements, and media resources.</p>
+                            <p className={`text-sm leading-relaxed ${sub}`}>Press releases, announcements, and media resources.</p>
                         </Link>
                     </div>
                 </div>
 
-                {/* Right Column: Latest Articles */}
                 <div className="col-span-9">
                     <div className="flex items-center justify-between mb-6">
-                        <span className="text-xs font-semibold text-neutral-400 uppercase tracking-wider">Latest Updates</span>
-                        <Link href="/blog" className="text-sm font-medium text-neutral-500 hover:text-neutral-900 transition-colors" onClick={onClose}>
+                        <span className="text-xs font-semibold text-neutral-500 uppercase tracking-wider">Latest Updates</span>
+                        <Link href="/blog" className={`text-sm font-medium transition-colors ${viewAll}`} onClick={onClose}>
                             View all
                         </Link>
                     </div>
                     <div className="grid grid-cols-3 gap-8">
-                        {/* Article 1 */}
                         <Link href="/blog" className="group block" onClick={onClose}>
-                            <div className="relative aspect-video bg-neutral-100 rounded-sm mb-4 overflow-hidden border border-neutral-200">
-                                <Image
-                                    src="/assets/blog1.png"
-                                    alt="Legal Tech Trends"
-                                    fill
-                                    className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                                />
+                            <div className={`relative aspect-video rounded-sm mb-4 overflow-hidden border ${cardBg}`}>
+                                <Image src="/assets/blog1.png" alt="Legal Tech Trends" fill className="object-cover group-hover:scale-[1.02] transition-transform duration-500" />
                             </div>
                             <span className="text-xs text-neutral-500 font-medium mb-2 block uppercase tracking-wide">Insights</span>
-                            <h4 className="text-base font-medium text-neutral-900 group-hover:text-black transition-colors line-clamp-2">
-                                The Future of Legal Tech: AI-Driven Workflows
-                            </h4>
+                            <h4 className={`text-base font-medium transition-colors line-clamp-2 ${card}`}>The Future of Legal Tech: AI-Driven Workflows</h4>
                         </Link>
-
-                        {/* Article 2 */}
                         <Link href="/blog" className="group block" onClick={onClose}>
-                            <div className="relative aspect-video bg-neutral-100 rounded-sm mb-4 overflow-hidden border border-neutral-200">
-                                <Image
-                                    src="/assets/blog2.png"
-                                    alt="Platform Update"
-                                    fill
-                                    className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                                />
+                            <div className={`relative aspect-video rounded-sm mb-4 overflow-hidden border ${cardBg}`}>
+                                <Image src="/assets/blog2.png" alt="Platform Update" fill className="object-cover group-hover:scale-[1.02] transition-transform duration-500" />
                             </div>
                             <span className="text-xs text-neutral-500 font-medium mb-2 block uppercase tracking-wide">Product</span>
-                            <h4 className="text-base font-medium text-neutral-900 group-hover:text-black transition-colors line-clamp-2">
-                                Introducing Advanced Contract Analysis 2.0
-                            </h4>
+                            <h4 className={`text-base font-medium transition-colors line-clamp-2 ${card}`}>Introducing Advanced Contract Analysis 2.0</h4>
                         </Link>
-
-                        {/* Article 3 */}
                         <Link href="/blog" className="group block" onClick={onClose}>
-                            <div className="relative aspect-video bg-neutral-100 rounded-sm mb-4 overflow-hidden border border-neutral-200">
-                                <Image
-                                    src="/assets/blog3.png"
-                                    alt="Partnership"
-                                    fill
-                                    className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                                />
+                            <div className={`relative aspect-video rounded-sm mb-4 overflow-hidden border ${cardBg}`}>
+                                <Image src="/assets/blog3.png" alt="Partnership" fill className="object-cover group-hover:scale-[1.02] transition-transform duration-500" />
                             </div>
                             <span className="text-xs text-neutral-500 font-medium mb-2 block uppercase tracking-wide">News</span>
-                            <h4 className="text-base font-medium text-neutral-900 group-hover:text-black transition-colors line-clamp-2">
-                                Wesley Partners with Global Top 100 Firm
-                            </h4>
+                            <h4 className={`text-base font-medium transition-colors line-clamp-2 ${card}`}>Wesley Partners with Global Top 100 Firm</h4>
                         </Link>
                     </div>
                 </div>
@@ -164,8 +140,17 @@ const NewsMegaMenu = ({ onClose }: { onClose: () => void }) => {
     );
 };
 
-const ProductMegaMenu = ({ onClose }: { onClose: () => void }) => {
+const ProductMegaMenu = ({ onClose, isHomePage }: { onClose: () => void; isHomePage: boolean }) => {
     const productLinks = NAV_LINKS.find(link => link.label === 'Product')?.subItems || [];
+    const bg = isHomePage ? 'bg-[#0a0a0a] border-b border-white/10' : 'bg-white border-b border-neutral-200';
+    const borderCol = isHomePage ? 'border-white/10' : 'border-neutral-200';
+    const heading = isHomePage ? 'text-neutral-300 group-hover:text-white' : 'text-neutral-700 group-hover:text-neutral-900';
+    const sub = isHomePage ? 'text-neutral-400 group-hover:text-neutral-300' : 'text-neutral-500 group-hover:text-neutral-700';
+    const featTitle = isHomePage ? 'text-white' : 'text-neutral-900';
+    const featSub = isHomePage ? 'text-neutral-400' : 'text-neutral-500';
+    const previewBg = isHomePage ? 'bg-white/5 border-white/10' : 'bg-neutral-100 border-neutral-200';
+    const previewText = isHomePage ? 'border-white/20 bg-white/5 text-neutral-300' : 'border-neutral-300 bg-neutral-50 text-neutral-500';
+    const badgeStyle = isHomePage ? 'bg-white/10 text-neutral-300 border-white/10' : 'bg-neutral-100 text-neutral-500 border-neutral-200';
 
     return (
         <motion.div
@@ -173,45 +158,31 @@ const ProductMegaMenu = ({ onClose }: { onClose: () => void }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-[64px] left-0 w-full bg-white border-b border-neutral-200 shadow-xl shadow-neutral-200/20 z-30 font-sans"
+            className={`absolute top-[64px] left-0 w-full shadow-2xl z-30 font-sans ${bg}`}
             onMouseLeave={onClose}
         >
             <div className="max-w-7xl mx-auto px-8 py-10 grid grid-cols-12 gap-12">
-                {/* Left Column: Product List */}
                 <div className="col-span-5 flex flex-col gap-6">
                     {productLinks.map((item) => (
-                        <Link
-                            key={item.label}
-                            href={item.href}
-                            className="group block"
-                            onClick={onClose}
-                        >
-                            <h3 className="text-[15px] font-medium text-neutral-900 mb-1 flex items-center gap-2">
+                        <Link key={item.label} href={item.href} className="group block" onClick={onClose}>
+                            <h3 className={`text-[15px] font-medium mb-1 flex items-center gap-2 ${heading}`}>
                                 {item.label}
                                 {item.badge && (
-                                    <span className="text-[10px] bg-neutral-100 text-neutral-600 px-2 py-0.5 rounded-sm uppercase tracking-wider border border-neutral-200">
-                                        {item.badge}
-                                    </span>
+                                    <span className={`text-[10px] px-2 py-0.5 rounded-sm uppercase tracking-wider border ${badgeStyle}`}>{item.badge}</span>
                                 )}
                             </h3>
-                            <p className="text-sm text-neutral-500 group-hover:text-neutral-700 transition-colors line-clamp-1">
-                                {item.description}
-                            </p>
+                            <p className={`text-sm transition-colors line-clamp-1 ${sub}`}>{item.description}</p>
                         </Link>
                     ))}
                 </div>
-
-                {/* Right Column: Featured Feature */}
-                <div className="col-span-7 pl-8 border-l border-neutral-100">
+                <div className={`col-span-7 pl-8 border-l ${borderCol}`}>
                     <div className="h-full flex flex-col justify-center">
-                        <span className="text-xs font-semibold text-neutral-400 uppercase tracking-wider mb-3">Featured Module</span>
-                        <h3 className="text-2xl font-serif text-neutral-900 mb-3">Custom Workflows</h3>
-                        <p className="text-neutral-500 mb-6 max-w-lg text-sm leading-relaxed">
-                            Design and deploy workflows that capture your firm&apos;s differentiators and deliver high-quality legal work at scale.
-                        </p>
-                        <div className="relative w-full aspect-[16/9] bg-neutral-50 rounded-sm overflow-hidden border border-neutral-200 group cursor-pointer">
+                        <span className="text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-3">Featured Module</span>
+                        <h3 className={`text-2xl font-serif mb-3 ${featTitle}`}>Custom Workflows</h3>
+                        <p className={`mb-6 max-w-lg text-sm leading-relaxed ${featSub}`}>Design and deploy workflows that capture your firm&apos;s differentiators and deliver high-quality legal work at scale.</p>
+                        <div className={`relative w-full aspect-[16/9] rounded-sm overflow-hidden border group cursor-pointer ${previewBg}`}>
                             <div className="absolute inset-0 flex items-center justify-center">
-                                <span className="text-neutral-400 font-medium text-sm border border-neutral-200 bg-white px-4 py-2 rounded-sm shadow-sm font-sans">Preview</span>
+                                <span className={`font-medium text-sm border backdrop-blur-sm px-4 py-2 rounded-sm shadow-sm font-sans ${previewText}`}>Preview</span>
                             </div>
                         </div>
                     </div>
@@ -221,8 +192,16 @@ const ProductMegaMenu = ({ onClose }: { onClose: () => void }) => {
     );
 };
 
-const SolutionsMegaMenu = ({ onClose }: { onClose: () => void }) => {
+const SolutionsMegaMenu = ({ onClose, isHomePage }: { onClose: () => void; isHomePage: boolean }) => {
     const solutionsLinks = NAV_LINKS.find(link => link.label === 'Solutions')?.subItems || [];
+    const bg = isHomePage ? 'bg-[#0a0a0a] border-b border-white/10' : 'bg-white border-b border-neutral-200';
+    const borderCol = isHomePage ? 'border-white/10' : 'border-neutral-200';
+    const heading = isHomePage ? 'text-neutral-300 group-hover:text-white' : 'text-neutral-700 group-hover:text-neutral-900';
+    const sub = isHomePage ? 'text-neutral-400 group-hover:text-neutral-300' : 'text-neutral-500 group-hover:text-neutral-700';
+    const featTitle = isHomePage ? 'text-white' : 'text-neutral-900';
+    const featSub = isHomePage ? 'text-neutral-400' : 'text-neutral-500';
+    const previewBg = isHomePage ? 'bg-white/5 border-white/10' : 'bg-neutral-100 border-neutral-200';
+    const previewText = isHomePage ? 'border-white/20 bg-white/5 text-neutral-300' : 'border-neutral-300 bg-neutral-50 text-neutral-500';
 
     return (
         <motion.div
@@ -230,40 +209,26 @@ const SolutionsMegaMenu = ({ onClose }: { onClose: () => void }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-[64px] left-0 w-full bg-white border-b border-neutral-200 shadow-xl shadow-neutral-200/20 z-30 font-sans"
+            className={`absolute top-[64px] left-0 w-full shadow-2xl z-30 font-sans ${bg}`}
             onMouseLeave={onClose}
         >
             <div className="max-w-7xl mx-auto px-8 py-10 grid grid-cols-12 gap-12">
-                {/* Left Column: Solutions List */}
                 <div className="col-span-5 flex flex-col gap-6">
                     {solutionsLinks.map((item) => (
-                        <Link
-                            key={item.label}
-                            href={item.href}
-                            className="group block"
-                            onClick={onClose}
-                        >
-                            <h3 className="text-[15px] font-medium text-neutral-900 mb-1 flex items-center gap-2">
-                                {item.label}
-                            </h3>
-                            <p className="text-sm text-neutral-500 group-hover:text-neutral-700 transition-colors line-clamp-1">
-                                {item.description}
-                            </p>
+                        <Link key={item.label} href={item.href} className="group block" onClick={onClose}>
+                            <h3 className={`text-[15px] font-medium mb-1 flex items-center gap-2 ${heading}`}>{item.label}</h3>
+                            <p className={`text-sm transition-colors line-clamp-1 ${sub}`}>{item.description}</p>
                         </Link>
                     ))}
                 </div>
-
-                {/* Right Column: Featured Solution */}
-                <div className="col-span-7 pl-8 border-l border-neutral-100">
+                <div className={`col-span-7 pl-8 border-l ${borderCol}`}>
                     <div className="h-full flex flex-col justify-center">
-                        <span className="text-xs font-semibold text-neutral-400 uppercase tracking-wider mb-3">Featured Solution</span>
-                        <h3 className="text-2xl font-serif text-neutral-900 mb-3">Litigation Strategy</h3>
-                        <p className="text-neutral-500 mb-6 max-w-lg text-sm leading-relaxed">
-                            Discover how our AI-driven workflows can give you the winning edge in complex litigation cases by uncovering hidden risk and precedent.
-                        </p>
-                        <div className="relative w-full aspect-[16/9] bg-neutral-50 rounded-sm overflow-hidden border border-neutral-200 group cursor-pointer">
+                        <span className="text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-3">Featured Solution</span>
+                        <h3 className={`text-2xl font-serif mb-3 ${featTitle}`}>Litigation Strategy</h3>
+                        <p className={`mb-6 max-w-lg text-sm leading-relaxed ${featSub}`}>Discover how our AI-driven workflows can give you the winning edge in complex litigation cases by uncovering hidden risk and precedent.</p>
+                        <div className={`relative w-full aspect-[16/9] rounded-sm overflow-hidden border group cursor-pointer ${previewBg}`}>
                             <div className="absolute inset-0 flex items-center justify-center">
-                                <span className="text-neutral-400 font-medium text-sm border border-neutral-200 bg-white px-4 py-2 rounded-sm shadow-sm font-sans">Preview</span>
+                                <span className={`font-medium text-sm border backdrop-blur-sm px-4 py-2 rounded-sm shadow-sm font-sans ${previewText}`}>Preview</span>
                             </div>
                         </div>
                     </div>
@@ -278,25 +243,45 @@ export default function Navbar() {
     const isHomePage = pathname === '/';
 
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-    const [isNavHovered, setIsNavHovered] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isNewsOpen, setIsNewsOpen] = useState(false);
     const [isProductOpen, setIsProductOpen] = useState(false);
     const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
     const [mobileExpandedIndex, setMobileExpandedIndex] = useState<number | null>(null);
 
-    const isSolidTheme = !isHomePage || isNavHovered;
+    const isDropdownOpen = isNewsOpen || isProductOpen || isSolutionsOpen;
+    const isLinkHovered = hoveredIndex !== null || isDropdownOpen;
 
-    const navThemeClass = isSolidTheme ? 'bg-white text-neutral-900 shadow-sm border-b border-neutral-200' : 'bg-transparent text-white';
-    const linkThemeClass = isSolidTheme ? 'text-neutral-600 hover:text-neutral-900' : 'text-white/80 hover:text-white';
-    const inactiveLinkClass = isSolidTheme ? 'text-neutral-400' : 'text-white/40';
+    // On homepage: transparent by default, dark on hover/dropdown
+    // On all other pages: always white background
+    const isDarkNav = isHomePage && isLinkHovered;
+    const navThemeClass = isHomePage
+        ? (isDarkNav ? 'bg-[#0a0a0a] text-white shadow-sm border-b border-white/10' : 'bg-transparent text-white')
+        : 'bg-white text-neutral-900 shadow-sm border-b border-neutral-200';
+
+    const getLinkClass = (index: number, isOpen: boolean) => {
+        const isHovered = hoveredIndex === index;
+        const isActive = isHovered || isOpen;
+        const isAnyHovered = hoveredIndex !== null || isDropdownOpen;
+
+        if (isHomePage) {
+            // Homepage: white text logic (dark nav)
+            if (isActive) return 'text-white';
+            if (isAnyHovered) return 'text-neutral-500 hover:text-white';
+            return 'text-white/80 hover:text-white';
+        } else {
+            // Inner pages: dark text on white nav
+            if (isActive) return 'text-neutral-900';
+            if (isAnyHovered) return 'text-neutral-400 hover:text-neutral-900';
+            return 'text-neutral-600 hover:text-neutral-900';
+        }
+    };
 
     return (
         <nav
             className={`fixed top-0 z-40 w-full transition-all duration-300 font-sans ${navThemeClass}`}
-            onMouseEnter={() => setIsNavHovered(true)}
             onMouseLeave={() => {
-                setIsNavHovered(false);
+                setHoveredIndex(null);
                 setIsNewsOpen(false);
                 setIsProductOpen(false);
                 setIsSolutionsOpen(false);
@@ -304,101 +289,103 @@ export default function Navbar() {
         >
             <div className="relative flex h-16 w-full items-center justify-between px-6 md:px-8 max-w-[1400px] mx-auto">
                 {/* Logo */}
-                <div className={`text-base font-semibold tracking-tight z-50 transition-colors ${isSolidTheme ? 'text-neutral-900' : 'text-white'}`}>
+                <div className={`font-serif text-2xl tracking-tight z-50 transition-colors ${isHomePage ? 'text-white' : 'text-neutral-900'}`}>
                     <Link href="/" className="cursor-pointer">Wesley</Link>
                 </div>
 
                 {/* Desktop Nav Links */}
                 <div className="absolute left-1/2 -translate-x-1/2 hidden items-center space-x-8 md:flex">
-                    {NAV_LINKS.map((link, index) => (
-                        link.label === 'News' ? (
-                            <button
-                                key={link.label}
-                                onMouseEnter={() => {
-                                    setHoveredIndex(index);
-                                    setIsNewsOpen(true);
-                                    setIsProductOpen(false);
-                                    setIsSolutionsOpen(false);
-                                }}
-                                className={`text-[13px] font-medium transition-colors duration-200 h-16 flex items-center gap-1.5 cursor-pointer
-                                    ${(hoveredIndex !== null && hoveredIndex !== index && !isNewsOpen) ? inactiveLinkClass : linkThemeClass}
-                                    ${hoveredIndex === index || isNewsOpen ? (isSolidTheme ? 'text-neutral-900' : 'text-white') : ''}
-                                `}
-                            >
-                                {link.label}
-                                <ChevronDown
-                                    className={`w-3.5 h-3.5 transition-transform duration-200 ${isNewsOpen ? 'rotate-180' : ''} ${isSolidTheme ? 'text-neutral-900' : (isNewsOpen ? 'text-white' : 'text-white/40')}`}
-                                />
-                            </button>
+                    {NAV_LINKS.map((link, index) => {
+                        const isActive = link.label === 'News' ? isNewsOpen
+                            : link.label === 'Product' ? isProductOpen
+                                : link.label === 'Solutions' ? isSolutionsOpen
+                                    : hoveredIndex === index;
+                        const underlineColor = isHomePage ? 'bg-white' : 'bg-neutral-900';
+
+                        return link.label === 'News' ? (
+                            <div key={link.label} className="relative">
+                                <button
+                                    onMouseEnter={() => {
+                                        setHoveredIndex(index);
+                                        setIsNewsOpen(true);
+                                        setIsProductOpen(false);
+                                        setIsSolutionsOpen(false);
+                                    }}
+                                    className={`text-[13px] font-medium transition-colors duration-200 h-16 flex items-center gap-1.5 cursor-pointer ${getLinkClass(index, isNewsOpen)}`}
+                                >
+                                    {link.label}
+                                    <ChevronDown
+                                        className={`w-3.5 h-3.5 transition-transform duration-200 ${isNewsOpen ? 'rotate-180' : ''} ${isHomePage ? (isNewsOpen ? 'text-white' : 'text-white/40') : (isNewsOpen ? 'text-neutral-900' : 'text-neutral-400')}`}
+                                    />
+                                </button>
+                                <span className={`absolute bottom-0 left-0 right-0 h-[2px] ${underlineColor} transition-transform duration-200 origin-center ${isActive ? 'scale-x-100' : 'scale-x-0'}`} />
+                            </div>
                         ) : link.label === 'Product' ? (
-                            <button
-                                key={link.label}
-                                onMouseEnter={() => {
-                                    setHoveredIndex(index);
-                                    setIsProductOpen(true);
-                                    setIsNewsOpen(false);
-                                    setIsSolutionsOpen(false);
-                                }}
-                                className={`text-[13px] font-medium transition-colors duration-200 h-16 flex items-center gap-1.5 cursor-pointer
-                                    ${(hoveredIndex !== null && hoveredIndex !== index && !isProductOpen) ? inactiveLinkClass : linkThemeClass}
-                                    ${hoveredIndex === index || isProductOpen ? (isSolidTheme ? 'text-neutral-900' : 'text-white') : ''}
-                                `}
-                            >
-                                {link.label}
-                                <ChevronDown
-                                    className={`w-3.5 h-3.5 transition-transform duration-200 ${isProductOpen ? 'rotate-180' : ''} ${isSolidTheme ? 'text-neutral-900' : (isProductOpen ? 'text-white' : 'text-white/40')}`}
-                                />
-                            </button>
+                            <div key={link.label} className="relative">
+                                <button
+                                    onMouseEnter={() => {
+                                        setHoveredIndex(index);
+                                        setIsProductOpen(true);
+                                        setIsNewsOpen(false);
+                                        setIsSolutionsOpen(false);
+                                    }}
+                                    className={`text-[13px] font-medium transition-colors duration-200 h-16 flex items-center gap-1.5 cursor-pointer ${getLinkClass(index, isProductOpen)}`}
+                                >
+                                    {link.label}
+                                    <ChevronDown
+                                        className={`w-3.5 h-3.5 transition-transform duration-200 ${isProductOpen ? 'rotate-180' : ''} ${isHomePage ? (isProductOpen ? 'text-white' : 'text-white/40') : (isProductOpen ? 'text-neutral-900' : 'text-neutral-400')}`}
+                                    />
+                                </button>
+                                <span className={`absolute bottom-0 left-0 right-0 h-[2px] ${underlineColor} transition-transform duration-200 origin-center ${isActive ? 'scale-x-100' : 'scale-x-0'}`} />
+                            </div>
                         ) : link.label === 'Solutions' ? (
-                            <button
-                                key={link.label}
-                                onMouseEnter={() => {
-                                    setHoveredIndex(index);
-                                    setIsSolutionsOpen(true);
-                                    setIsProductOpen(false);
-                                    setIsNewsOpen(false);
-                                }}
-                                className={`text-[13px] font-medium transition-colors duration-200 h-16 flex items-center gap-1.5 cursor-pointer
-                                    ${(hoveredIndex !== null && hoveredIndex !== index && !isSolutionsOpen) ? inactiveLinkClass : linkThemeClass}
-                                    ${hoveredIndex === index || isSolutionsOpen ? (isSolidTheme ? 'text-neutral-900' : 'text-white') : ''}
-                                `}
-                            >
-                                {link.label}
-                                <ChevronDown
-                                    className={`w-3.5 h-3.5 transition-transform duration-200 ${isSolutionsOpen ? 'rotate-180' : ''} ${isSolidTheme ? 'text-neutral-900' : (isSolutionsOpen ? 'text-white' : 'text-white/40')}`}
-                                />
-                            </button>
+                            <div key={link.label} className="relative">
+                                <button
+                                    onMouseEnter={() => {
+                                        setHoveredIndex(index);
+                                        setIsSolutionsOpen(true);
+                                        setIsProductOpen(false);
+                                        setIsNewsOpen(false);
+                                    }}
+                                    className={`text-[13px] font-medium transition-colors duration-200 h-16 flex items-center gap-1.5 cursor-pointer ${getLinkClass(index, isSolutionsOpen)}`}
+                                >
+                                    {link.label}
+                                    <ChevronDown
+                                        className={`w-3.5 h-3.5 transition-transform duration-200 ${isSolutionsOpen ? 'rotate-180' : ''} ${isHomePage ? (isSolutionsOpen ? 'text-white' : 'text-white/40') : (isSolutionsOpen ? 'text-neutral-900' : 'text-neutral-400')}`}
+                                    />
+                                </button>
+                                <span className={`absolute bottom-0 left-0 right-0 h-[2px] ${underlineColor} transition-transform duration-200 origin-center ${isActive ? 'scale-x-100' : 'scale-x-0'}`} />
+                            </div>
                         ) : (
-                            <Link
-                                key={link.label}
-                                href={link.href}
-                                onMouseEnter={() => {
-                                    setHoveredIndex(index);
-                                    setIsNewsOpen(false);
-                                    setIsProductOpen(false);
-                                    setIsSolutionsOpen(false);
-                                }}
-                                onMouseLeave={() => setHoveredIndex(null)}
-                                className={`text-[13px] font-medium transition-colors duration-200 flex items-center gap-1.5 h-16 cursor-pointer
-                                    ${hoveredIndex !== null && hoveredIndex !== index ? inactiveLinkClass : linkThemeClass}
-                                    ${hoveredIndex === index ? (isSolidTheme ? 'text-neutral-900' : 'text-white') : ''}
-                                `}
-                            >
-                                {link.label}
-                            </Link>
-                        )
-                    ))}
+                            <div key={link.label} className="relative">
+                                <Link
+                                    href={link.href}
+                                    onMouseEnter={() => {
+                                        setHoveredIndex(index);
+                                        setIsNewsOpen(false);
+                                        setIsProductOpen(false);
+                                        setIsSolutionsOpen(false);
+                                    }}
+                                    onMouseLeave={() => setHoveredIndex(null)}
+                                    className={`text-[13px] font-medium transition-colors duration-200 flex items-center gap-1.5 h-16 cursor-pointer ${getLinkClass(index, false)}`}
+                                >
+                                    {link.label}
+                                </Link>
+                                <span className={`absolute bottom-0 left-0 right-0 h-[2px] ${underlineColor} transition-transform duration-200 origin-center ${isActive ? 'scale-x-100' : 'scale-x-0'}`} />
+                            </div>
+                        );
+                    })}
                 </div>
 
                 {/* Desktop Login & Mobile Burger */}
                 <div className="flex items-center gap-4 z-50">
                     <div className="hidden md:block relative z-50">
-                        <LoginLink className={isSolidTheme ? 'text-neutral-900 hover:text-black' : 'text-white/90 hover:text-white'} />
+                        <LoginLink className={isHomePage ? 'text-white/90 hover:text-white' : 'text-neutral-600 hover:text-neutral-900'} />
                     </div>
 
                     {/* Mobile Menu Button */}
                     <button
-                        className="md:hidden text-neutral-900"
+                        className={`md:hidden ${isHomePage ? 'text-white' : 'text-neutral-900'}`}
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     >
                         {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -408,13 +395,13 @@ export default function Navbar() {
 
             {/* Megamenus */}
             <AnimatePresence>
-                {isNewsOpen && <NewsMegaMenu onClose={() => setIsNewsOpen(false)} />}
+                {isNewsOpen && <NewsMegaMenu onClose={() => setIsNewsOpen(false)} isHomePage={isHomePage} />}
             </AnimatePresence>
             <AnimatePresence>
-                {isProductOpen && <ProductMegaMenu onClose={() => setIsProductOpen(false)} />}
+                {isProductOpen && <ProductMegaMenu onClose={() => setIsProductOpen(false)} isHomePage={isHomePage} />}
             </AnimatePresence>
             <AnimatePresence>
-                {isSolutionsOpen && <SolutionsMegaMenu onClose={() => setIsSolutionsOpen(false)} />}
+                {isSolutionsOpen && <SolutionsMegaMenu onClose={() => setIsSolutionsOpen(false)} isHomePage={isHomePage} />}
             </AnimatePresence>
 
             {/* Mobile Menu Overlay */}
@@ -498,3 +485,4 @@ export default function Navbar() {
         </nav>
     );
 }
+

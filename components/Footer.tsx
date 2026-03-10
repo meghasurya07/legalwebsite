@@ -12,7 +12,7 @@ export default function Footer() {
 
                     {/* Brand Column */}
                     <div className="space-y-4 max-w-xs shrink-0">
-                        <div className="text-lg font-semibold tracking-tight text-neutral-900 font-sans">
+                        <div className="text-2xl font-serif text-neutral-900 mb-6">
                             Wesley
                         </div>
                         <p className="text-sm text-neutral-500 leading-relaxed">
@@ -28,21 +28,16 @@ export default function Footer() {
                             links={[
                                 { label: "Overview", href: "/product/overview" },
                                 { label: "Assistant", href: "/product/assistant" },
-                                { label: "Case Workspace", href: "/product/case-workspace" },
-                                { label: "Document Intelligence", href: "/product/document-intelligence" },
-                                { label: "Legal Research", href: "/product/legal-research" },
-                                { label: "Portal", href: "/product/portal" },
+                                { label: "Documents", href: "/product/documents" },
                                 { label: "Workflows", href: "/product/workflows" },
                             ]}
                         />
                         <LinkColumn
                             title="Solutions"
                             links={[
-                                { label: "Law firms", href: "/solutions/law-firms" },
-                                { label: "In-house", href: "/solutions/in-house-teams" },
-                                { label: "Transactional", href: "/solutions/transactional" },
+                                { label: "Law Firms", href: "/solutions/law-firms" },
+                                { label: "In-House Teams", href: "/solutions/in-house-teams" },
                                 { label: "Litigation", href: "/solutions/litigation" },
-                                { label: "M&A", href: "/solutions/ma-due-diligence" },
                             ]}
                         />
                         <LinkColumn
@@ -51,17 +46,16 @@ export default function Footer() {
                                 { label: "About", href: "/about" },
                                 { label: "Blog", href: "/blog" },
                                 { label: "Newsroom", href: "/newsroom" },
-                                { label: "Careers", href: "/careers" },
-                                { label: "Contact us", href: "/contact" },
+                                { label: "Customers", href: "/customers" },
+                                { label: "Security", href: "/security" },
                             ]}
                         />
                         <LinkColumn
                             title="Legal"
                             links={[
-                                { label: "Terms of Service", href: "#" },
-                                { label: "Privacy Policy", href: "#" },
-                                { label: "Security Policy", href: "#" },
-                                { label: "Cookie Policy", href: "#" },
+                                { label: "Privacy Policy", href: "/security" },
+                                { label: "Terms of Service", href: "/security" },
+                                { label: "Security", href: "/security" },
                             ]}
                         />
                     </div>
