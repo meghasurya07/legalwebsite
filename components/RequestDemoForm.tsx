@@ -81,7 +81,7 @@ export default function RequestDemoForm() {
                         </div>
 
                         {/* First Name & Last Name */}
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <input
                                 type="text"
                                 name="firstName"
@@ -116,7 +116,7 @@ export default function RequestDemoForm() {
                         </div>
 
                         {/* Country & Job Title */}
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div className="relative">
                                 <select
                                     name="country"
@@ -150,7 +150,7 @@ export default function RequestDemoForm() {
                         </div>
 
                         {/* Organization Type & Legal Team Size */}
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div className="relative">
                                 <select
                                     name="organizationType"

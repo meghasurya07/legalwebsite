@@ -52,23 +52,25 @@ const TESTIMONIALS = [
 ];
 
 const CLIENTS = [
-    { name: "MERCK", style: "font-sans font-black tracking-widest text-2xl md:text-3xl" },
-    { name: "COMCAST", style: "font-sans font-bold tracking-wide text-2xl md:text-3xl" },
-    { name: "DENTONS", style: "font-sans font-extrabold tracking-tighter text-3xl md:text-4xl" },
-    { name: "BakerHostetler", style: "font-serif font-semibold text-2xl md:text-3xl" },
-    { name: "P&G", style: "font-serif font-bold italic text-3xl md:text-4xl" },
-    { name: "Herbert Smith Freehills", style: "font-sans font-medium uppercase tracking-widest text-sm md:text-base" },
-    { name: "Vinson&Elkins", style: "font-serif text-3xl md:text-4xl" },
-    { name: "Schroder", style: "font-sans font-light tracking-wide text-2xl md:text-3xl" },
-    { name: "Macfarlanes", style: "font-serif tracking-widest uppercase text-lg md:text-xl" },
-    { name: "PwC", style: "font-serif font-bold text-3xl md:text-4xl text-[#D04A02] invert grayscale hover:grayscale-0 transition-all" },
+    { alt: "Macfarlanes", src: "https://cdn.sanity.io/images/07s0r5r6/production/d7d4d4e3b180cc9d15aa0e13eaa246a741909c72-413x198.svg" },
+    { alt: "KKR", src: "https://cdn.sanity.io/images/07s0r5r6/production/475bbc2a0f74530ca928cb7509c910ed6fb06c43-162x200.svg" },
+    { alt: "A&O Shearman", src: "https://cdn.sanity.io/images/07s0r5r6/production/7be263cc75e286f1869a2d570a72d7aea4c564f6-477x200.svg" },
+    { alt: "Gleiss Lutz", src: "https://cdn.sanity.io/images/07s0r5r6/production/5934ef5e8ff97b10f21175975777c6a4b6df11ff-318x200.svg" },
+    { alt: "CMS", src: "https://cdn.sanity.io/images/07s0r5r6/production/94accdbd4a1b543162412cf72a93f5ef86bcfc37-167x200.svg" },
+    { alt: "Cuatrecasas", src: "https://cdn.sanity.io/images/07s0r5r6/production/41dd412dbdacff7fc7a9eb7eee77f7de3872bd6b-289x200.svg" },
+    { alt: "Thompson Hine", src: "https://cdn.sanity.io/images/07s0r5r6/production/1a418fe5940a4f84d13a657732ecb4d52131572e-419x200.svg" },
+    { alt: "Merck", src: "https://cdn.sanity.io/images/07s0r5r6/production/b86eaa7fe2558c5eb13b1a88a03d8630122f3055-320x200.svg" },
+    { alt: "Comcast", src: "https://cdn.sanity.io/images/07s0r5r6/production/36bbd399121eff2b23cd36789ee677a065c3bd68-284x200.svg" },
+    { alt: "Dentons", src: "https://cdn.sanity.io/images/07s0r5r6/production/27beffa5c7f5e04aaf92472d6249278a70fdf91b-268x196.svg" },
+    { alt: "BakerHostetler", src: "https://cdn.sanity.io/images/07s0r5r6/production/e375b788deac927f303f0d0b7b23272828cdeb89-330x200.svg" },
+    { alt: "Procter & Gamble", src: "https://cdn.sanity.io/images/07s0r5r6/production/937096215325168ce61ab7474795df23c0d1d264-120x200.svg" },
 ];
 
 export default function CustomersPage() {
     return (
         <main className="min-h-screen bg-background text-foreground pt-20">
             {/* Hero Section */}
-            <section className="h-[calc(100vh-5rem)] flex flex-col">
+            <section className="min-h-[60vh] md:h-[calc(100vh-5rem)] flex flex-col">
                 <div className="flex-grow flex flex-col justify-center items-center text-center px-4 max-w-5xl mx-auto w-full">
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
@@ -81,9 +83,9 @@ export default function CustomersPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-5xl md:text-7xl font-serif tracking-tight mb-8 leading-[1.1]"
+                        className="text-4xl sm:text-5xl md:text-7xl font-serif tracking-tight mb-8 leading-[1.1]"
                     >
-                        World&apos;s Best <br />
+                        World&apos;s Best <br className="hidden sm:block" />
                         Legal Teams
                     </motion.h1>
                     <motion.p
@@ -114,9 +116,10 @@ export default function CustomersPage() {
                         {[...CLIENTS, ...CLIENTS, ...CLIENTS, ...CLIENTS].map((client, index) => (
                             <span
                                 key={index}
-                                className={`${client.style} text-neutral-400 hover:text-neutral-900 transition-opacity cursor-default opacity-60 hover:opacity-100 flex-shrink-0 pr-20`}
+                                className="flex-shrink-0 px-8 md:px-12 opacity-40 hover:opacity-100 transition-opacity"
                             >
-                                {client.name}
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img alt={client.alt} src={client.src} className="h-[50px] md:h-[70px] w-auto invert" />
                             </span>
                         ))}
                     </div>
@@ -141,7 +144,7 @@ export default function CustomersPage() {
                             transition={{ delay: index * 0.1 }}
                             className="relative pl-6 border-l-2 border-border-subtle"
                         >
-                            <div className="text-5xl md:text-6xl font-bold mb-4 tracking-tight">{metric.value}</div>
+                            <div className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">{metric.value}</div>
                             <div className="text-lg text-neutral-900 font-medium mb-1">{metric.label}</div>
                             <div className="text-sm text-neutral-500">{metric.description}</div>
                         </motion.div>
@@ -169,9 +172,8 @@ export default function CustomersPage() {
                                         transition={{ delay: index * 0.05 }}
                                         className="aspect-[4/3] bg-cream border border-border-subtle rounded-sm flex items-center justify-center p-6 md:p-5 hover:bg-white hover:border-border-subtle hover:shadow-sm transition-all cursor-default group"
                                     >
-                                        <span className={`text-center text-neutral-400 group-hover:text-neutral-900 transition-colors ${client.style.replace(/text-\d+xl/g, '').replace(/md:text-\d+xl/g, '')} text-lg md:text-xl`}>
-                                            {client.name}
-                                        </span>
+                                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                                        <img alt={client.alt} src={client.src} className="h-[50px] md:h-[70px] w-auto invert opacity-50 group-hover:opacity-100 transition-all" />
                                     </motion.div>
                                 ))}
                             </div>
@@ -188,7 +190,7 @@ export default function CustomersPage() {
                     </div>
                     <div className="relative z-10 max-w-4xl">
                         <div className="text-sm font-medium text-neutral-500 mb-6 uppercase tracking-wider">Featured Story</div>
-                        <h2 className="text-3xl md:text-5xl font-medium leading-tight mb-8 text-neutral-800">
+                        <h2 className="text-2xl sm:text-3xl md:text-5xl font-medium leading-tight mb-8 text-neutral-800">
                             &quot;Any technology introduced into the bank must meet uncompromising standards of security, accuracy, and intention.&quot;
                         </h2>
                         <div className="flex items-center gap-4">
@@ -246,7 +248,7 @@ export default function CustomersPage() {
                     viewport={{ once: true }}
                     className="max-w-2xl mx-auto"
                 >
-                    <h2 className="text-4xl md:text-6xl font-bold mb-6">Work will never be the same.</h2>
+                    <h2 className="text-3xl md:text-6xl font-bold mb-6">Work will never be the same.</h2>
                     <p className="text-neutral-500 text-xl mb-10">
                         Join the world&apos;s best legal teams in the AI revolution.
                     </p>

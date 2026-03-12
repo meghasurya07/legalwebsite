@@ -11,7 +11,7 @@ export default function HowItWorks() {
             className="py-32 relative bg-background overflow-hidden font-sans"
         >
             <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">
-                <div className="text-center mb-32 relative z-10">
+                <div className="text-center mb-16 md:mb-32 relative z-10">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -46,7 +46,7 @@ export default function HowItWorks() {
                     </div>
 
                     {/* Step 01: Upload & Secure */}
-                    <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center mb-32">
+                    <div className="relative z-10 grid md:grid-cols-2 gap-8 md:gap-16 items-center mb-16 md:mb-32">
                         {/* Right: Text */}
                         <motion.div
                             initial={{ opacity: 0, x: 20 }}
@@ -106,7 +106,7 @@ export default function HowItWorks() {
                     </div>
 
                     {/* Step 02: Analysis */}
-                    <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center mb-32">
+                    <div className="relative z-10 grid md:grid-cols-2 gap-8 md:gap-16 items-center mb-16 md:mb-32">
                         {/* Right: Text (Actually Left in DOM) */}
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
@@ -156,7 +156,7 @@ export default function HowItWorks() {
                     </div>
 
                     {/* Step 03: Action */}
-                    <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center">
+                    <div className="relative z-10 grid md:grid-cols-2 gap-8 md:gap-16 items-center">
                         {/* Right: Text */}
                         <motion.div
                             initial={{ opacity: 0, x: 20 }}

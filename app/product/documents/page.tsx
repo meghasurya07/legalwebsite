@@ -45,9 +45,9 @@ export default function DocumentsPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.05 }}
-                    className="text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight mb-8 leading-[1.05]"
+                    className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight mb-8 leading-[1.05]"
                 >
-                    Your Legal <br />Knowledge Base
+                    Your Legal <br className="hidden sm:block" />Knowledge Base
                 </motion.h1>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
@@ -83,15 +83,18 @@ export default function DocumentsPage() {
                                 <div className="bg-neutral-900 text-white text-xs font-medium px-4 py-2.5 rounded-lg">Upload</div>
                             </div>
                             <div className="space-y-3">
-                                {['Project Alpha — M&A Due Diligence', 'Regulatory Compliance Review', 'Client Onboarding Package'].map((name, i) => (
+                                {['Project Alpha — M&A Due Diligence', 'Regulatory Compliance Review', 'Client Onboarding Package'].map((name, i) => {
+                                    const fileCounts = [142, 87, 53];
+                                    return (
                                     <div key={i} className="bg-white rounded-lg border border-border-subtle px-5 py-4 flex items-center justify-between">
                                         <div className="flex items-center gap-3">
                                             <FolderKanban className="w-4 h-4 text-neutral-400" />
                                             <span className="text-sm font-medium text-neutral-700">{name}</span>
                                         </div>
-                                        <span className="text-xs text-neutral-400">{Math.floor(Math.random() * 200 + 20)} files</span>
+                                        <span className="text-xs text-neutral-400">{fileCounts[i]} files</span>
                                     </div>
-                                ))}
+                                    );
+                                })}
                             </div>
                         </div>
                     </div>

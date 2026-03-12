@@ -37,14 +37,14 @@ export default function AboutPage() {
     return (
         <main className="min-h-screen bg-background text-foreground pt-20">
             {/* 1. Hero Section */}
-            <section className="h-[calc(100vh-5rem)] flex flex-col justify-center items-center text-center px-4 max-w-6xl mx-auto">
+            <section className="min-h-[60vh] md:h-[calc(100vh-5rem)] flex flex-col justify-center items-center text-center px-4 sm:px-6 max-w-6xl mx-auto py-16 md:py-0">
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight mb-8 leading-[1.1]"
+                    className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight mb-8 leading-[1.1]"
                 >
-                    Redefining <br />
+                    Redefining <br className="hidden sm:block" />
                     Legal Intelligence
                 </motion.h1>
                 <motion.p
@@ -58,7 +58,7 @@ export default function AboutPage() {
             </section>
 
             {/* 2. Visual Gallery */}
-            <section className="w-full h-[60vh] md:h-[80vh] relative overflow-hidden">
+            <section className="w-full h-[40vh] md:h-[80vh] relative overflow-hidden">
                 <Image
                     src="/assets/placeholder.png"
                     alt="Team meeting"
@@ -71,7 +71,7 @@ export default function AboutPage() {
             {/* 3. Mission Text */}
             <SectionWrapper className="py-32">
                 <div className="max-w-4xl mx-auto px-6">
-                    <h2 className="text-3xl md:text-5xl font-serif mb-12 leading-tight">
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif mb-8 md:mb-12 leading-tight">
                         Bridging Law and <br /> Technology
                     </h2>
                     <div className="space-y-8 text-lg md:text-xl text-neutral-500 leading-relaxed font-light">

@@ -59,9 +59,9 @@ export default function LitigationPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.05 }}
-                    className="text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight mb-8 leading-[1.05]"
+                    className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight mb-8 leading-[1.05]"
                 >
-                    Win More Cases <br />With Deeper Analysis
+                    Win More Cases <br className="hidden sm:block" />With Deeper Analysis
                 </motion.h1>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
@@ -76,16 +76,16 @@ export default function LitigationPage() {
             {/* Stats */}
             <section className="border-t border-b border-border-subtle">
                 <div className="max-w-7xl mx-auto px-6 md:px-12">
-                    <div className="grid grid-cols-3 divide-x divide-border-subtle">
+                    <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border-subtle">
                         {STATS.map((stat) => (
                             <motion.div
                                 key={stat.label}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                className="py-12 md:py-16 text-center"
+                                className="py-8 md:py-16 text-center"
                             >
-                                <div className="text-4xl md:text-5xl font-serif text-neutral-900 mb-2">{stat.value}</div>
+                                <div className="text-3xl md:text-5xl font-serif text-neutral-900 mb-2">{stat.value}</div>
                                 <div className="text-sm text-neutral-500">{stat.label}</div>
                             </motion.div>
                         ))}

@@ -68,7 +68,7 @@ function CounterItem({ stat, index }: { stat: typeof stats[0], index: number }) 
                 <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 h-16 w-px bg-neutral-200" />
             )}
 
-            <h3 className="text-4xl md:text-5xl font-serif text-neutral-900 mb-3 tracking-tight">
+            <h3 className="text-3xl md:text-5xl font-serif text-neutral-900 mb-3 tracking-tight">
                 <motion.span>{displayValue}</motion.span>{stat.suffix}
             </h3>
             <p className="font-sans text-neutral-900 font-medium text-base mb-2">{stat.label}</p>
@@ -103,7 +103,7 @@ export default function Metrics() {
                 </motion.h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 relative z-10 max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 relative z-10 max-w-7xl mx-auto px-4">
                 {stats.map((stat, index) => (
                     <CounterItem key={index} stat={stat} index={index} />
                 ))}

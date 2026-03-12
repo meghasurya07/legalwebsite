@@ -14,7 +14,7 @@ export default function Compliance() {
                     <div className="grid grid-cols-2 md:flex md:flex-wrap justify-center gap-6 gap-y-10 md:gap-16">
                         {/* SOC2 */}
                         <div className="flex flex-col items-center gap-4 group">
-                            <div className="w-32 h-32 md:w-36 md:h-36 rounded-2xl border border-border-subtle bg-cream flex items-center justify-center p-8 group-hover:border-neutral-300 transition-colors">
+                            <div className="w-24 h-24 md:w-36 md:h-36 rounded-2xl border border-border-subtle bg-cream flex items-center justify-center p-6 md:p-8 group-hover:border-neutral-300 transition-colors">
                                 <Shield className="w-full h-full text-neutral-400 group-hover:text-neutral-900 transition-colors" strokeWidth={1} />
                             </div>
                             <h4 className="font-bold text-neutral-700">SOC2 TYPE II</h4>
@@ -25,7 +25,7 @@ export default function Compliance() {
 
                         {/* ISO */}
                         <div className="flex flex-col items-center gap-4 group">
-                            <div className="w-32 h-32 md:w-36 md:h-36 rounded-2xl border border-border-subtle bg-cream flex items-center justify-center p-8 group-hover:border-neutral-300 transition-colors">
+                            <div className="w-24 h-24 md:w-36 md:h-36 rounded-2xl border border-border-subtle bg-cream flex items-center justify-center p-6 md:p-8 group-hover:border-neutral-300 transition-colors">
                                 <Globe className="w-full h-full text-neutral-400 group-hover:text-neutral-900 transition-colors" strokeWidth={1} />
                             </div>
                             <h4 className="font-bold text-neutral-700">ISO 27001</h4>
@@ -36,7 +36,7 @@ export default function Compliance() {
 
                         {/* GDPR */}
                         <div className="flex flex-col items-center gap-4 group">
-                            <div className="w-32 h-32 md:w-36 md:h-36 rounded-2xl border border-border-subtle bg-cream flex items-center justify-center p-8 group-hover:border-neutral-300 transition-colors">
+                            <div className="w-24 h-24 md:w-36 md:h-36 rounded-2xl border border-border-subtle bg-cream flex items-center justify-center p-6 md:p-8 group-hover:border-neutral-300 transition-colors">
                                 <Lock className="w-full h-full text-neutral-400 group-hover:text-neutral-900 transition-colors" strokeWidth={1} />
                             </div>
                             <h4 className="font-bold text-neutral-700">GDPR Compliant</h4>
@@ -47,7 +47,7 @@ export default function Compliance() {
 
                         {/* CCPA */}
                         <div className="flex flex-col items-center gap-4 group">
-                            <div className="w-32 h-32 md:w-36 md:h-36 rounded-2xl border border-border-subtle bg-cream flex items-center justify-center p-8 group-hover:border-neutral-300 transition-colors">
+                            <div className="w-24 h-24 md:w-36 md:h-36 rounded-2xl border border-border-subtle bg-cream flex items-center justify-center p-6 md:p-8 group-hover:border-neutral-300 transition-colors">
                                 <Scale className="w-full h-full text-neutral-400 group-hover:text-neutral-900 transition-colors" strokeWidth={1} />
                             </div>
                             <h4 className="font-bold text-neutral-700">CCPA</h4>
@@ -58,7 +58,7 @@ export default function Compliance() {
 
                         {/* DPF */}
                         <div className="flex flex-col items-center gap-4 group">
-                            <div className="w-32 h-32 md:w-36 md:h-36 rounded-2xl border border-border-subtle bg-cream flex items-center justify-center p-8 group-hover:border-neutral-300 transition-colors">
+                            <div className="w-24 h-24 md:w-36 md:h-36 rounded-2xl border border-border-subtle bg-cream flex items-center justify-center p-6 md:p-8 group-hover:border-neutral-300 transition-colors">
                                 <FileJson className="w-full h-full text-neutral-400 group-hover:text-neutral-900 transition-colors" strokeWidth={1} />
                             </div>
                             <h4 className="font-bold text-neutral-700">DPF Framework</h4>
@@ -69,7 +69,7 @@ export default function Compliance() {
                     </div>
                 </div>
 
-                <div className="max-w-4xl mx-auto mt-20 p-8 border border-border-subtle rounded-xl bg-cream text-center">
+                <div className="max-w-4xl mx-auto mt-12 md:mt-20 p-6 md:p-8 border border-border-subtle rounded-xl bg-cream text-center">
                     <h3 className="text-2xl font-bold text-neutral-900 mb-4">Built on a Foundation of Trust</h3>
                     <p className="text-neutral-600 leading-relaxed mb-0">
                         Security isn&apos;t an afterthought; it&apos;s the core of our platform. From the moment you upload a document to the final export of your insights, we ensure your data is shielded by defense-in-depth architecture and rigorous privacy protocols.

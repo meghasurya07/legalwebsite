@@ -76,9 +76,9 @@ export default function WorkflowsPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.05 }}
-                    className="text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight mb-8 leading-[1.05]"
+                    className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight mb-8 leading-[1.05]"
                 >
-                    Automate Expert <br />Legal Work
+                    Automate Expert <br className="hidden sm:block" />Legal Work
                 </motion.h1>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
