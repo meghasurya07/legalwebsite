@@ -6,7 +6,6 @@ import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import LoadingScreen from '@/components/LoadingScreen';
 
-import TrustedBy from '@/components/landing/TrustedBy';
 import ValueHighlights from '@/components/landing/ValueHighlights';
 import ProductShowcase from '@/components/landing/ProductShowcase';
 import HowItWorks from '@/components/landing/HowItWorks';
@@ -99,7 +98,7 @@ export default function Home() {
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link
-                  href="/solutions"
+                  href="/product/overview"
                   className="rounded-full border border-white/30 bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-[1.02] cursor-pointer"
                 >
                   Explore Platform

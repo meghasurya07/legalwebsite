@@ -38,7 +38,7 @@ export default function HeroVideoSequencer() {
                 <motion.div
                     key={VIDEO_CLIPS[index].id}
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 0.7 }} // Lowered opacity for deeper blacks/contrast
+                    animate={{ opacity: 0.85 }} // Brighter video for more vibrancy
                     exit={{ opacity: 0 }}
                     transition={{ duration: 2, ease: "easeInOut" }} // Slower transition for cinematic feel
                     className="absolute inset-0 w-full h-full"
@@ -56,9 +56,9 @@ export default function HeroVideoSequencer() {
                 </motion.div>
             </AnimatePresence>
 
-            {/* Overlays to match Harvey's high-contrast look */}
-            <div className="absolute inset-0 bg-black/30" /> {/* Darkening overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/40" />
+            {/* Overlays — light touch for readability without killing brightness */}
+            <div className="absolute inset-0 bg-black/15" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/30" />
         </div>
     );
 }
