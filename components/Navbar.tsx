@@ -67,12 +67,8 @@ const LoginLink = ({ className }: { className?: string }) => (
 
 const NewsMegaMenu = ({ onClose, isHomePage }: { onClose: () => void; isHomePage: boolean }) => {
     const bg = isHomePage ? 'bg-[#0a0a0a] border-b border-white/10' : 'bg-white border-b border-neutral-200';
-    const borderCol = isHomePage ? 'border-white/10' : 'border-neutral-200';
     const heading = isHomePage ? 'text-neutral-300 group-hover:text-white' : 'text-neutral-700 group-hover:text-neutral-900';
     const sub = isHomePage ? 'text-neutral-400' : 'text-neutral-500';
-    const card = isHomePage ? 'text-neutral-300 group-hover:text-white' : 'text-neutral-700 group-hover:text-neutral-900';
-    const cardBg = isHomePage ? 'bg-white/5 border-white/10' : 'bg-neutral-100 border-neutral-200';
-    const viewAll = isHomePage ? 'text-neutral-400 hover:text-white' : 'text-neutral-500 hover:text-neutral-900';
     const arrowCol = isHomePage ? 'text-neutral-400' : 'text-neutral-400';
 
     return (
@@ -84,8 +80,8 @@ const NewsMegaMenu = ({ onClose, isHomePage }: { onClose: () => void; isHomePage
             className={`absolute top-[64px] left-0 w-full shadow-2xl z-30 font-sans ${bg}`}
             onMouseLeave={onClose}
         >
-            <div className="max-w-7xl mx-auto px-8 py-10 grid grid-cols-12 gap-12">
-                <div className={`col-span-3 space-y-8 border-r ${borderCol} pr-8`}>
+            <div className="max-w-4xl mx-auto px-8 py-10">
+                <div className="grid grid-cols-2 gap-12">
                     <div className="group">
                         <Link href="/blog" className="block" onClick={onClose}>
                             <h3 className={`text-lg font-medium mb-2 flex items-center gap-2 transition-colors ${heading}`}>
@@ -100,38 +96,6 @@ const NewsMegaMenu = ({ onClose, isHomePage }: { onClose: () => void; isHomePage
                                 Newsroom <ArrowRight size={16} className={`opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all ${arrowCol}`} />
                             </h3>
                             <p className={`text-sm leading-relaxed ${sub}`}>Press releases, announcements, and media resources.</p>
-                        </Link>
-                    </div>
-                </div>
-
-                <div className="col-span-9">
-                    <div className="flex items-center justify-between mb-6">
-                        <span className="text-xs font-semibold text-neutral-500 uppercase tracking-wider">Latest Updates</span>
-                        <Link href="/blog" className={`text-sm font-medium transition-colors ${viewAll}`} onClick={onClose}>
-                            View all
-                        </Link>
-                    </div>
-                    <div className="grid grid-cols-3 gap-8">
-                        <Link href="/blog" className="group block" onClick={onClose}>
-                            <div className={`relative aspect-video rounded-sm mb-4 overflow-hidden border ${cardBg}`}>
-                                <Image src="/assets/blog1.png" alt="Legal Tech Trends" fill className="object-cover group-hover:scale-[1.02] transition-transform duration-500" />
-                            </div>
-                            <span className="text-xs text-neutral-500 font-medium mb-2 block uppercase tracking-wide">Insights</span>
-                            <h4 className={`text-base font-medium transition-colors line-clamp-2 ${card}`}>The Future of Legal Tech: AI-Driven Workflows</h4>
-                        </Link>
-                        <Link href="/blog" className="group block" onClick={onClose}>
-                            <div className={`relative aspect-video rounded-sm mb-4 overflow-hidden border ${cardBg}`}>
-                                <Image src="/assets/blog2.png" alt="Platform Update" fill className="object-cover group-hover:scale-[1.02] transition-transform duration-500" />
-                            </div>
-                            <span className="text-xs text-neutral-500 font-medium mb-2 block uppercase tracking-wide">Product</span>
-                            <h4 className={`text-base font-medium transition-colors line-clamp-2 ${card}`}>Introducing Advanced Contract Analysis 2.0</h4>
-                        </Link>
-                        <Link href="/blog" className="group block" onClick={onClose}>
-                            <div className={`relative aspect-video rounded-sm mb-4 overflow-hidden border ${cardBg}`}>
-                                <Image src="/assets/blog3.png" alt="Partnership" fill className="object-cover group-hover:scale-[1.02] transition-transform duration-500" />
-                            </div>
-                            <span className="text-xs text-neutral-500 font-medium mb-2 block uppercase tracking-wide">News</span>
-                            <h4 className={`text-base font-medium transition-colors line-clamp-2 ${card}`}>Wesley Partners with Global Top 100 Firm</h4>
                         </Link>
                     </div>
                 </div>

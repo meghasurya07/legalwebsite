@@ -8,29 +8,17 @@ import Image from 'next/image';
 
 const FOUNDERS = [
     {
-        name: "Gabriel Pereyra",
+        name: "Mahesh Bodepudi",
         role: "Co-Founder & CEO",
         image: "",
-        past: ["Meta AI", "Google DeepMind"]
+        past: []
     },
     {
-        name: "Winston Weinberg",
-        role: "Co-Founder & President",
-        image: "",
-        past: ["O'Melveny & Myers", "King & Spalding"]
-    },
-    {
-        name: "Sarah Chen",
+        name: "Megha Surya Bodepudi",
         role: "Co-Founder & CTO",
         image: "",
-        past: ["OpenAI", "Stripe"]
+        past: []
     },
-    {
-        name: "David Marcus",
-        role: "Co-Founder & COO",
-        image: "",
-        past: ["Goldman Sachs", "Palantir"]
-    }
 ];
 
 export default function AboutPage() {
@@ -112,7 +100,7 @@ export default function AboutPage() {
                                 <p className="text-sm text-neutral-500 mb-4 font-medium">{founder.role}</p>
 
                                 <div className="border-t border-border-subtle pt-4 mt-4">
-                                    <p className="text-xs text-neutral-400 uppercase tracking-wider mb-2">Previously</p>
+                                    {/* <p className="text-xs text-neutral-400 uppercase tracking-wider mb-2">Previously</p> */}
                                     <ul className="text-sm text-neutral-500 space-y-1">
                                         {founder.past.map((job, i) => (
                                             <li key={i}>{job}</li>
