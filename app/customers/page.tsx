@@ -51,20 +51,8 @@ const TESTIMONIALS = [
     }
 ];
 
-const CLIENTS = [
-    { alt: "Macfarlanes", src: "https://cdn.sanity.io/images/07s0r5r6/production/d7d4d4e3b180cc9d15aa0e13eaa246a741909c72-413x198.svg" },
-    { alt: "KKR", src: "https://cdn.sanity.io/images/07s0r5r6/production/475bbc2a0f74530ca928cb7509c910ed6fb06c43-162x200.svg" },
-    { alt: "A&O Shearman", src: "https://cdn.sanity.io/images/07s0r5r6/production/7be263cc75e286f1869a2d570a72d7aea4c564f6-477x200.svg" },
-    { alt: "Gleiss Lutz", src: "https://cdn.sanity.io/images/07s0r5r6/production/5934ef5e8ff97b10f21175975777c6a4b6df11ff-318x200.svg" },
-    { alt: "CMS", src: "https://cdn.sanity.io/images/07s0r5r6/production/94accdbd4a1b543162412cf72a93f5ef86bcfc37-167x200.svg" },
-    { alt: "Cuatrecasas", src: "https://cdn.sanity.io/images/07s0r5r6/production/41dd412dbdacff7fc7a9eb7eee77f7de3872bd6b-289x200.svg" },
-    { alt: "Thompson Hine", src: "https://cdn.sanity.io/images/07s0r5r6/production/1a418fe5940a4f84d13a657732ecb4d52131572e-419x200.svg" },
-    { alt: "Merck", src: "https://cdn.sanity.io/images/07s0r5r6/production/b86eaa7fe2558c5eb13b1a88a03d8630122f3055-320x200.svg" },
-    { alt: "Comcast", src: "https://cdn.sanity.io/images/07s0r5r6/production/36bbd399121eff2b23cd36789ee677a065c3bd68-284x200.svg" },
-    { alt: "Dentons", src: "https://cdn.sanity.io/images/07s0r5r6/production/27beffa5c7f5e04aaf92472d6249278a70fdf91b-268x196.svg" },
-    { alt: "BakerHostetler", src: "https://cdn.sanity.io/images/07s0r5r6/production/e375b788deac927f303f0d0b7b23272828cdeb89-330x200.svg" },
-    { alt: "Procter & Gamble", src: "https://cdn.sanity.io/images/07s0r5r6/production/937096215325168ce61ab7474795df23c0d1d264-120x200.svg" },
-];
+import { CUSTOMER_LOGOS } from '@/constants/logos';
+import TrustedBy from '@/components/landing/TrustedBy';
 
 export default function CustomersPage() {
     return (
@@ -112,17 +100,12 @@ export default function CustomersPage() {
 
                 {/* Marquee Section (Integrated into Hero) */}
                 <div className="py-8 w-full overflow-hidden border-b border-border-subtle">
-                    <div className="flex whitespace-nowrap animate-marquee items-center mb-0">
-                        {[...CLIENTS, ...CLIENTS, ...CLIENTS, ...CLIENTS].map((client, index) => (
-                            <span
-                                key={index}
-                                className="flex-shrink-0 px-8 md:px-12 opacity-40 hover:opacity-100 transition-opacity"
-                            >
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img alt={client.alt} src={client.src} className="h-[50px] md:h-[70px] w-auto invert" />
-                            </span>
-                        ))}
-                    </div>
+                    <TrustedBy 
+                        theme="light" 
+                        showLabel={false} 
+                        logoHeight="h-[50px] md:h-[70px]" 
+                        speed={60} 
+                    />
                 </div>
             </section>
 
@@ -163,7 +146,7 @@ export default function CustomersPage() {
                     <div className="mx-7 grid grid-cols-2 gap-[14px] md:mx-8 md:grid-cols-6 md:gap-4 lg:mx-9 lg:grid-cols-12 lg:gap-[18px] xl:mx-10 xl:gap-5">
                         <div className="col-span-2 md:col-span-6 lg:col-start-2 lg:col-end-12 xl:col-start-2 xl:col-span-10">
                             <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-                                {CLIENTS.map((client, index) => (
+                                {CUSTOMER_LOGOS.map((client, index) => (
                                     <motion.div
                                         key={index}
                                         initial={{ opacity: 0, scale: 0.95 }}

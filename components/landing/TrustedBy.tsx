@@ -1,39 +1,82 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { CUSTOMER_LOGOS } from '@/constants/logos';
 
-// Placeholder logos (using text for now, or could use simple SVGs)
-const LOGOS = [
-    "ACME Corp", "Global Bank", "LegalTech", "NextGen Law", "Future Firm", "Trust & Co",
-    "ACME Corp", "Global Bank", "LegalTech", "NextGen Law", "Future Firm", "Trust & Co"
-];
+interface TrustedByProps {
+  theme?: 'light' | 'dark';
+  className?: string;
+  marqueeClassName?: string;
+  logoHeight?: string; // e.g. "h-[40px] md:h-[60px]"
+  speed?: number; // duration in seconds
+  showLabel?: boolean;
+}
 
-export default function TrustedBy() {
-    return (
-        <section className="w-full py-12 border-b border-border-subtle bg-cream overflow-hidden flex flex-col items-center">
-            <p className="text-xs uppercase tracking-widest text-neutral-500 mb-8 font-semibold font-sans">Trusted by leading firms</p>
+export default function TrustedBy({
+  theme = 'light',
+  className = "",
+  marqueeClassName = "",
+  logoHeight = "h-[30px] md:h-[40px]",
+  speed = 60,
+  showLabel = true,
+}: TrustedByProps) {
+  const isDark = theme === 'dark';
 
-            <div className="relative w-full max-w-7xl px-6 md:px-12 flex overflow-hidden mask-linear-fade">
-                <motion.div
-                    className="flex gap-16 md:gap-24 whitespace-nowrap min-w-full"
-                    animate={{ x: ["0%", "-50%"] }}
-                    transition={{
-                        repeat: Infinity,
-                        ease: "linear",
-                        duration: 30
-                    }}
-                >
-                    {[...LOGOS, ...LOGOS].map((logo, i) => (
-                        <span key={i} className="text-lg md:text-xl font-bold text-neutral-300 hover:text-neutral-900 transition-colors duration-500 cursor-default select-none font-serif">
-                            {logo}
-                        </span>
-                    ))}
-                </motion.div>
+  return (
+    <section className={`w-full overflow-hidden flex flex-col items-center ${className}`}>
+      {showLabel && (
+        <p className={`text-xs uppercase tracking-widest mb-8 font-semibold font-sans ${isDark ? 'text-white/50' : 'text-neutral-500'}`}>
+          Trusted by leading firms
+        </p>
+      )}
 
-                {/* Fade edges */}
-                <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-cream to-transparent z-10 pointer-events-none" />
-                <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-cream to-transparent z-10 pointer-events-none" />
-            </div>
-        </section>
-    );
+      <div 
+        className={`relative w-full flex overflow-hidden ${marqueeClassName}`}
+        style={{ 
+          maskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)', 
+          WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)' 
+        }}
+      >
+        <div className="flex w-max will-change-transform [backface-visibility:hidden]">
+          <motion.ul 
+            className="flex w-max items-center"
+            animate={{ x: [0, -100 + "%"] }}
+            transition={{
+              duration: speed,
+              ease: "linear",
+              repeat: Infinity,
+            }}
+          >
+            {CUSTOMER_LOGOS.map((logo, i) => (
+              <li key={`a-${i}`} className="flex shrink-0 list-none items-center px-6 md:px-10">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img 
+                  alt={logo.alt} 
+                  src={logo.src} 
+                  width={logo.w} 
+                  height={logo.h} 
+                  className={`${logoHeight} w-auto ${!isDark ? 'invert' : ''}`} 
+                  style={{ color: 'transparent' }} 
+                />
+              </li>
+            ))}
+            {/* Duplicate for seamless loop */}
+            {CUSTOMER_LOGOS.map((logo, i) => (
+              <li key={`b-${i}`} className="flex shrink-0 list-none items-center px-6 md:px-10">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img 
+                  alt={logo.alt} 
+                  src={logo.src} 
+                  width={logo.w} 
+                  height={logo.h} 
+                  className={`${logoHeight} w-auto ${!isDark ? 'invert' : ''}`} 
+                  style={{ color: 'transparent' }} 
+                />
+              </li>
+            ))}
+          </motion.ul>
+        </div>
+      </div>
+    </section>
+  );
 }
