@@ -58,7 +58,7 @@ const NAV_LINKS: NavItem[] = [
 // Simplified Login Link
 const LoginLink = ({ className }: { className?: string }) => (
     <Link
-        href="/login"
+        href="https://app.askwesley.com/"
         className={`text-[13px] font-medium transition-colors cursor-pointer ${className}`}
     >
         Login
