@@ -17,16 +17,30 @@ export default function RequestDemoForm() {
     });
 
     const [submitted, setSubmitted] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
-    const handleSubmit = (e: FormEvent) => {
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
-        // TODO: Add backend integration here
-        console.log('Form submitted:', formData);
-        setSubmitted(true);
+        setIsSubmitting(true);
+        setError(null);
 
-        // Reset form after 3 seconds
-        setTimeout(() => {
-            setSubmitted(false);
+        try {
+            const response = await fetch('/api/demo', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.error || 'Failed to submit request');
+            }
+
+            setSubmitted(true);
             setFormData({
                 firstName: '',
                 lastName: '',
@@ -39,7 +53,12 @@ export default function RequestDemoForm() {
                 phoneNumber: '',
                 hearAboutUs: ''
             });
-        }, 3000);
+        } catch (err) {
+            console.error('Submission error:', err);
+            setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -218,15 +237,25 @@ export default function RequestDemoForm() {
                             />
                         </div>
 
+                        {/* Error Message */}
+                        {error && (
+                            <div className="text-red-500 text-sm text-center mt-2">
+                                {error}
+                            </div>
+                        )}
+
                         {/* Submit Button */}
                         <button
                             type="submit"
-                            className="w-full bg-neutral-900 text-white py-3.5 px-6 rounded-lg font-medium hover:bg-neutral-800 transition-colors duration-200 mt-6 flex items-center justify-center gap-2 text-sm shadow-sm"
+                            disabled={isSubmitting}
+                            className={`w-full bg-neutral-900 text-white py-3.5 px-6 rounded-lg font-medium hover:bg-neutral-800 transition-colors duration-200 mt-6 flex items-center justify-center gap-2 text-sm shadow-sm ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                         >
-                            Request Access
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
+                            {isSubmitting ? 'Processing...' : 'Request Access'}
+                            {!isSubmitting && (
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            )}
                         </button>
 
                         {/* Privacy Policy */}
