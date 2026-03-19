@@ -63,8 +63,8 @@ export default function Footer() {
                 <div className="border-t border-neutral-200 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-neutral-400 font-medium">
                     <p>© 2026 Wesley. All rights reserved.</p>
                     <div className="mt-4 md:mt-0 flex gap-6">
-                        <Link href="https://linkedin.com" className="hover:text-neutral-900 transition-colors">LinkedIn</Link>
-                        <Link href="https://twitter.com" className="hover:text-neutral-900 transition-colors">Twitter / X</Link>
+                        <Link href="https://linkedin.com/company/askwesley" target="_blank" className="hover:text-neutral-900 transition-colors">LinkedIn</Link>
+                        <Link href="https://twitter.com/askwesleydotcom" target="_blank" className="hover:text-neutral-900 transition-colors">Twitter / X</Link>
                     </div>
                 </div>
 
