@@ -2,11 +2,11 @@ import { Metadata } from "next";
 import AboutContent from "@/components/about/AboutContent";
 
 export const metadata: Metadata = {
-  title: "About",
-  description: "Learn about Wesley's mission to redefine legal intelligence by bridging law and technology with advanced AI.",
+  title: "About Wesley - AI Legal Intelligence Company",
+  description: "Wesley is a legal AI company redefining how law firms and corporate legal teams work. Built by legal tech experts, Wesley combines advanced AI with deep legal domain expertise.",
   openGraph: {
-    title: "About Wesley | Redefining Legal Intelligence",
-    description: "Empowering legal professionals with next-generation AI to unlock unprecedented efficiency.",
+    title: "About Wesley | The Legal AI Platform for Modern Law Firms",
+    description: "Learn how Wesley is building the future of legal intelligence with AI-powered tools for contract analysis, legal research, and document review.",
   }
 };
 

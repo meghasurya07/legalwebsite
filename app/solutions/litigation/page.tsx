@@ -2,11 +2,11 @@ import { Metadata } from "next";
 import LitigationContent from "@/components/solutions/LitigationContent";
 
 export const metadata: Metadata = {
-  title: "AI for Litigation",
-  description: "Win more cases with Wesley's legal AI. Analyze deposition transcripts, research case law, and build litigation strategy with deeper insights.",
+  title: "AI for Litigation - Legal AI for Case Analysis & Strategy",
+  description: "Wesley's litigation AI helps legal teams analyze deposition transcripts, research case law across jurisdictions, and build data-driven litigation strategy.",
   openGraph: {
-    title: "Wesley for Litigation | Deeper Analysis, Smarter Strategy",
-    description: "Empower your litigation team with analytical tools that surface key testimony and precedents instantly.",
+    title: "Wesley for Litigation | AI-Powered Case Analysis",
+    description: "Strengthen your litigation practice with Wesley's AI. Surface key testimony, analyze precedents, and build smarter legal strategy.",
   }
 };
 

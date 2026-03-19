@@ -30,11 +30,20 @@ import StructuredData from "@/components/SEO/StructuredData";
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.askwesley.com'),
   title: {
-    default: "Wesley | The Legal AI Platform",
-    template: "%s | Wesley"
+    default: "Wesley | AI-Powered Legal Intelligence Platform",
+    template: "%s | Wesley - Legal AI Platform"
   },
-  description: "The new standard for legal work. AI-powered legal intelligence for modern teams. Draft, search, and reason over documents with partner-level precision.",
-  keywords: ["Legal AI", "Legal Intelligence", "Wesley", "Ask Wesley", "AI for Lawyers", "Contract Analysis"],
+  description: "Wesley is the AI-powered legal intelligence platform for law firms and corporate legal teams. Draft contracts, conduct legal research, and analyze documents with partner-level precision. Trusted by AmLaw 100 firms.",
+  keywords: [
+    "Wesley", "Ask Wesley", "Wesley AI", "Wesley legal AI",
+    "legal AI", "legal AI platform", "AI for lawyers", "AI for law firms",
+    "AI contract analysis", "AI legal research", "AI document review",
+    "legal intelligence", "generative AI for legal", "legal AI software",
+    "AI contract drafting", "legal document automation",
+    "legal tech AI", "enterprise legal AI", "AI due diligence",
+    "corporate legal AI", "in-house legal AI", "litigation AI",
+    "legal workflow automation", "AI legal assistant"
+  ],
   authors: [{ name: "Wesley Team" }],
   creator: "Wesley",
   publisher: "Wesley",
@@ -48,23 +57,22 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.askwesley.com",
     siteName: "Wesley",
-    title: "Wesley | The Professional Class Legal AI",
-    description: "The new standard for legal work. AI-powered legal intelligence for modern teams.",
+    title: "Wesley | AI-Powered Legal Intelligence Platform",
+    description: "Wesley is the AI legal platform trusted by leading law firms. Draft contracts, research case law, and review documents with AI precision.",
     images: [
       {
-        url: "/og-image.png", // Ensure this exists or I should generate an asset
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Wesley - Legal AI",
+        alt: "Wesley - AI-Powered Legal Intelligence Platform",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wesley | The Professional Class Legal AI",
-    description: "The new standard for legal work. AI-powered legal intelligence for modern teams.",
+    title: "Wesley | AI-Powered Legal Intelligence Platform",
+    description: "Wesley is the AI legal platform trusted by leading law firms. Draft contracts, research case law, and review documents with AI precision.",
     images: ["/og-image.png"],
-    creator: "@wesley_ai",
   },
   robots: {
     index: true,

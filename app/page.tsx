@@ -51,21 +51,21 @@ export default function Home() {
               transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
               className="relative z-10 mx-auto max-w-5xl text-center flex flex-col items-center pb-[100px]"
             >
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 backdrop-blur-md border border-white/20">
+              <h1 className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 backdrop-blur-md border border-white/20">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-white"></span>
                 </span>
                 <span className="text-xs font-medium tracking-wide text-white/90">INTRODUCING WESLEY</span>
-              </div>
-
-              <h1 className="mb-4 md:mb-6 font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-white">
-                Analyze Contracts. <br className="hidden sm:block" />
-                <span className="text-white/70 italic">Make Better Legal Decisions.</span>
               </h1>
 
+              <h2 className="mb-4 md:mb-6 font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-white">
+                Analyze Contracts. <br className="hidden sm:block" />
+                <span className="text-white/70 italic">Make Better Legal Decisions.</span>
+              </h2>
+
               <p className="mb-6 md:mb-10 max-w-2xl text-base sm:text-lg text-white/60 md:text-xl font-sans leading-relaxed">
-                The world&apos;s most advanced AI for legal professionals. Draft, search, and reason over documents with partner-level precision.
+                Wesley is the AI-powered legal intelligence platform for modern law firms. Draft contracts, conduct legal research, and review documents with partner-level precision.
               </p>
 
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
