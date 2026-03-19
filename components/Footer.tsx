@@ -53,9 +53,7 @@ export default function Footer() {
                         <LinkColumn
                             title="Legal"
                             links={[
-                                { label: "Privacy Policy", href: "/security" },
-                                { label: "Terms of Service", href: "/security" },
-                                { label: "Security", href: "/security" },
+                                { label: "Privacy Policy", href: "/legal/privacy-policy" },
                             ]}
                         />
                     </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import SectionWrapper from '@/components/SectionWrapper';
-import { Shield, Lock, Globe, ExternalLink, Scale, FileJson } from 'lucide-react';
+import { Shield, Lock, Globe, Scale, FileJson, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Compliance() {
@@ -9,39 +9,18 @@ export default function Compliance() {
         <SectionWrapper id="compliance" className="py-24 bg-background border-t border-border-subtle">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-12">Industry Standards & Compliance</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">Privacy & Compliance</h2>
+                    <p className="text-neutral-500 max-w-2xl mx-auto mb-12">Wesley is built with privacy-by-design principles and adheres to major global data protection regulations.</p>
 
                     <div className="grid grid-cols-2 md:flex md:flex-wrap justify-center gap-6 gap-y-10 md:gap-16">
-                        {/* SOC2 */}
-                        <div className="flex flex-col items-center gap-4 group">
-                            <div className="w-24 h-24 md:w-36 md:h-36 rounded-2xl border border-border-subtle bg-cream flex items-center justify-center p-6 md:p-8 group-hover:border-neutral-300 transition-colors">
-                                <Shield className="w-full h-full text-neutral-400 group-hover:text-neutral-900 transition-colors" strokeWidth={1} />
-                            </div>
-                            <h4 className="font-bold text-neutral-700">SOC2 TYPE II</h4>
-                            <Link href="https://us.aicpa.org/interestareas/frc/assuranceadvisoryservices/aicpasoc2report" target="_blank" className="text-sm text-neutral-500 hover:text-neutral-900 flex items-center gap-1 transition-colors">
-                                Verify <ExternalLink className="w-3 h-3" />
-                            </Link>
-                        </div>
-
-                        {/* ISO */}
-                        <div className="flex flex-col items-center gap-4 group">
-                            <div className="w-24 h-24 md:w-36 md:h-36 rounded-2xl border border-border-subtle bg-cream flex items-center justify-center p-6 md:p-8 group-hover:border-neutral-300 transition-colors">
-                                <Globe className="w-full h-full text-neutral-400 group-hover:text-neutral-900 transition-colors" strokeWidth={1} />
-                            </div>
-                            <h4 className="font-bold text-neutral-700">ISO 27001</h4>
-                            <Link href="https://www.iso.org/standard/27001" target="_blank" className="text-sm text-neutral-500 hover:text-neutral-900 flex items-center gap-1 transition-colors">
-                                Verify <ExternalLink className="w-3 h-3" />
-                            </Link>
-                        </div>
-
                         {/* GDPR */}
                         <div className="flex flex-col items-center gap-4 group">
                             <div className="w-24 h-24 md:w-36 md:h-36 rounded-2xl border border-border-subtle bg-cream flex items-center justify-center p-6 md:p-8 group-hover:border-neutral-300 transition-colors">
                                 <Lock className="w-full h-full text-neutral-400 group-hover:text-neutral-900 transition-colors" strokeWidth={1} />
                             </div>
                             <h4 className="font-bold text-neutral-700">GDPR Compliant</h4>
-                            <Link href="https://commission.europa.eu/law/law-topic/data-protection/eu-data-protection-rules_en" target="_blank" className="text-sm text-neutral-500 hover:text-neutral-900 flex items-center gap-1 transition-colors">
-                                Verify <ExternalLink className="w-3 h-3" />
+                            <Link href="/legal/privacy-policy#jurisdiction" className="text-sm text-neutral-500 hover:text-neutral-900 flex items-center gap-1 transition-colors">
+                                Our Policy <ArrowRight className="w-3 h-3" />
                             </Link>
                         </div>
 
@@ -50,20 +29,42 @@ export default function Compliance() {
                             <div className="w-24 h-24 md:w-36 md:h-36 rounded-2xl border border-border-subtle bg-cream flex items-center justify-center p-6 md:p-8 group-hover:border-neutral-300 transition-colors">
                                 <Scale className="w-full h-full text-neutral-400 group-hover:text-neutral-900 transition-colors" strokeWidth={1} />
                             </div>
-                            <h4 className="font-bold text-neutral-700">CCPA</h4>
-                            <Link href="https://oag.ca.gov/privacy/ccpa" target="_blank" className="text-sm text-neutral-500 hover:text-neutral-900 flex items-center gap-1 transition-colors">
-                                Verify <ExternalLink className="w-3 h-3" />
+                            <h4 className="font-bold text-neutral-700">CCPA Compliant</h4>
+                            <Link href="/legal/privacy-policy#jurisdiction" className="text-sm text-neutral-500 hover:text-neutral-900 flex items-center gap-1 transition-colors">
+                                Our Policy <ArrowRight className="w-3 h-3" />
                             </Link>
                         </div>
 
-                        {/* DPF */}
+                        {/* DPDPA */}
                         <div className="flex flex-col items-center gap-4 group">
                             <div className="w-24 h-24 md:w-36 md:h-36 rounded-2xl border border-border-subtle bg-cream flex items-center justify-center p-6 md:p-8 group-hover:border-neutral-300 transition-colors">
                                 <FileJson className="w-full h-full text-neutral-400 group-hover:text-neutral-900 transition-colors" strokeWidth={1} />
                             </div>
-                            <h4 className="font-bold text-neutral-700">DPF Framework</h4>
-                            <Link href="https://www.dataprivacyframework.gov/" target="_blank" className="text-sm text-neutral-500 hover:text-neutral-900 flex items-center gap-1 transition-colors">
-                                Verify <ExternalLink className="w-3 h-3" />
+                            <h4 className="font-bold text-neutral-700">DPDPA Compliant</h4>
+                            <Link href="/legal/privacy-policy#jurisdiction" className="text-sm text-neutral-500 hover:text-neutral-900 flex items-center gap-1 transition-colors">
+                                Our Policy <ArrowRight className="w-3 h-3" />
+                            </Link>
+                        </div>
+
+                        {/* End-to-End Encryption */}
+                        <div className="flex flex-col items-center gap-4 group">
+                            <div className="w-24 h-24 md:w-36 md:h-36 rounded-2xl border border-border-subtle bg-cream flex items-center justify-center p-6 md:p-8 group-hover:border-neutral-300 transition-colors">
+                                <Shield className="w-full h-full text-neutral-400 group-hover:text-neutral-900 transition-colors" strokeWidth={1} />
+                            </div>
+                            <h4 className="font-bold text-neutral-700">AES-256 Encryption</h4>
+                            <Link href="/legal/privacy-policy#security" className="text-sm text-neutral-500 hover:text-neutral-900 flex items-center gap-1 transition-colors">
+                                Our Policy <ArrowRight className="w-3 h-3" />
+                            </Link>
+                        </div>
+
+                        {/* Zero-Training */}
+                        <div className="flex flex-col items-center gap-4 group">
+                            <div className="w-24 h-24 md:w-36 md:h-36 rounded-2xl border border-border-subtle bg-cream flex items-center justify-center p-6 md:p-8 group-hover:border-neutral-300 transition-colors">
+                                <Globe className="w-full h-full text-neutral-400 group-hover:text-neutral-900 transition-colors" strokeWidth={1} />
+                            </div>
+                            <h4 className="font-bold text-neutral-700">Zero-Training Policy</h4>
+                            <Link href="/legal/privacy-policy#ai-specific" className="text-sm text-neutral-500 hover:text-neutral-900 flex items-center gap-1 transition-colors">
+                                Our Policy <ArrowRight className="w-3 h-3" />
                             </Link>
                         </div>
                     </div>
