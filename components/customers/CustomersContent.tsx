@@ -108,7 +108,7 @@ export default function CustomersContent() {
                 </div>
             </section>
 
-            {/* 2. Metrics Section */}
+            {/* Metrics Section - Commented out for now
             <SectionWrapper className="py-24 border-b border-border-subtle">
                 <div className="mb-12">
                     <h2 className="text-3xl font-semibold mb-2">Quantifiable Impact</h2>
@@ -131,8 +131,33 @@ export default function CustomersContent() {
                     ))}
                 </div>
             </SectionWrapper>
+            */}
 
-            {/* 3. Square Logo Grid */}
+            {/* Case Studies Placeholder Section */}
+            <SectionWrapper className="py-24 border-b border-border-subtle">
+                <div className="max-w-4xl mx-auto text-center py-20 px-8 rounded-3xl bg-cream border border-border-subtle">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="text-3xl md:text-5xl font-serif mb-6">Success Stories & Case Studies</h2>
+                        <p className="text-xl text-neutral-500 mb-8 max-w-2xl mx-auto leading-relaxed">
+                            We are currently finalizing detailed impact reports and case studies with our early enterprise partners. Full analysis of Wesley&apos;s transformative effects will be published shortly.
+                        </p>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <span className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-neutral-900 text-white text-sm font-medium">
+                                Case Studies Forthcoming
+                            </span>
+                            <Link href="/request-demo" className="text-neutral-900 font-medium flex items-center gap-2 hover:translate-x-1 transition-transform">
+                                Request an early access demo <ArrowRight size={16} />
+                            </Link>
+                        </div>
+                    </motion.div>
+                </div>
+            </SectionWrapper>
+
+            {/* Logo Grid Section - Commented out for now
             <section className="py-24 border-b border-border-subtle">
                 <div className="text-center mb-16 px-4">
                     <h2 className="text-3xl md:text-4xl font-semibold mb-4">Our Network</h2>
@@ -151,7 +176,6 @@ export default function CustomersContent() {
                                         transition={{ delay: index * 0.05 }}
                                         className="aspect-[4/3] bg-cream border border-border-subtle rounded-sm flex items-center justify-center p-6 md:p-5 hover:bg-white hover:border-border-subtle hover:shadow-sm transition-all cursor-default group"
                                     >
-                                        {/* eslint-disable-next-line @next/next/no-img-element */}
                                         <img alt={client.alt} src={client.src} className="h-[50px] md:h-[70px] w-auto invert opacity-50 group-hover:opacity-100 transition-all" />
                                     </motion.div>
                                 ))}
@@ -160,8 +184,9 @@ export default function CustomersContent() {
                     </div>
                 </div>
             </section>
+            */}
 
-            {/* Featured Story */}
+            {/* Featured Story - Commented out for now
             <SectionWrapper className="py-20 border-b border-border-subtle">
                 <div className="bg-cream border border-border-subtle rounded-3xl overflow-hidden p-8 md:p-12 relative">
                     <div className="absolute top-0 right-0 p-12 opacity-5 pointer-events-none">
@@ -184,8 +209,9 @@ export default function CustomersContent() {
                     </div>
                 </div>
             </SectionWrapper>
+            */}
 
-            {/* Customer Stories Grid */}
+            {/* Customer Stories Grid - Commented out for now
             <SectionWrapper className="py-24">
                 <div className="flex justify-between items-end mb-16">
                     <h2 className="text-4xl font-semibold">Customer Stories</h2>
@@ -218,6 +244,7 @@ export default function CustomersContent() {
                     ))}
                 </div>
             </SectionWrapper>
+            */}
 
             {/* CTA Section */}
             <SectionWrapper className="py-32 text-center">

@@ -97,17 +97,29 @@ export default function Metrics() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className="text-3xl md:text-5xl font-serif text-neutral-900"
+                    className="text-3xl md:text-5xl font-serif text-neutral-900 mb-6"
                 >
                     Designed for scale. Built for trust.
                 </motion.h2>
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                >
+                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-200 text-neutral-400 bg-neutral-50 text-sm font-medium">
+                        Success Metrics Forthcoming
+                    </span>
+                </motion.div>
             </div>
 
+            {/* Stats Grid - Commented out for now
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 relative z-10 max-w-7xl mx-auto px-4">
                 {stats.map((stat, index) => (
                     <CounterItem key={index} stat={stat} index={index} />
                 ))}
             </div>
+            */}
         </SectionWrapper>
     );
 }

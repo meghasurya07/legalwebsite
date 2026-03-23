@@ -25,11 +25,18 @@ export default function TrustedBy({
   return (
     <section className={`w-full overflow-hidden flex flex-col items-center ${className}`}>
       {showLabel && (
-        <p className={`text-xs uppercase tracking-widest mb-8 font-semibold font-sans ${isDark ? 'text-white/50' : 'text-neutral-500'}`}>
-          Trusted by leading firms
+        <p className={`text-xs uppercase tracking-widest font-semibold font-sans ${isDark ? 'text-white/50' : 'text-neutral-500'}`}>
+          Success Stories Forthcoming
         </p>
       )}
 
+      <div className="mt-4 mb-8">
+        <span className={`text-sm font-medium px-4 py-2 rounded-full border ${isDark ? 'border-white/10 text-white/40 bg-white/5' : 'border-neutral-200 text-neutral-400 bg-neutral-50'}`}>
+          Analysis in Progress
+        </span>
+      </div>
+
+      {/* Placeholder Customers Section - Commented out for now
       <div 
         className={`relative w-full flex overflow-hidden ${marqueeClassName}`}
         style={{ 
@@ -49,7 +56,6 @@ export default function TrustedBy({
           >
             {CUSTOMER_LOGOS.map((logo, i) => (
               <li key={`a-${i}`} className="flex shrink-0 list-none items-center px-6 md:px-10">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   alt={logo.alt} 
                   src={logo.src} 
@@ -60,10 +66,8 @@ export default function TrustedBy({
                 />
               </li>
             ))}
-            {/* Duplicate for seamless loop */}
             {CUSTOMER_LOGOS.map((logo, i) => (
               <li key={`b-${i}`} className="flex shrink-0 list-none items-center px-6 md:px-10">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   alt={logo.alt} 
                   src={logo.src} 
@@ -77,6 +81,7 @@ export default function TrustedBy({
           </motion.ul>
         </div>
       </div>
+      */}
     </section>
   );
 }
