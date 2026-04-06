@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
@@ -95,7 +95,7 @@ export default function PrivacyPolicyContent() {
                     <p>Through the normal course of operating our platform and running our business, we gather Personal Data from several sources and through various channels. The categories of data we handle are described below.</p>
 
                     <h4 className="font-semibold text-neutral-900 mt-8 mb-3 text-lg">2.1 Data You Provide to Us Directly</h4>
-                    <p>Whenever you create an account, request a demo, or otherwise communicate with us, you share certain information with us voluntarily. This includes:</p>
+                    <p>Whenever you create an account, Request Free Trial, or otherwise communicate with us, you share certain information with us voluntarily. This includes:</p>
                     <ul>
                         <li><strong>Account Data:</strong> To set up and maintain your Wesley account, we collect identifiers such as your full name, work email address, job title, employing organization, preferred language, login credentials, and&mdash;where applicable&mdash;billing details and payment transaction records associated with your subscription.</li>
                         <li><strong>Correspondence Data:</strong> When you reach out to us for support, submit feedback, respond to a survey, or otherwise get in touch, we retain your name, contact information, the substance of your inquiry, and metadata about how you engage with our messages and platform interfaces.</li>
@@ -534,3 +534,4 @@ function PolicySection({ id, number, title, children }: { id: string; number: st
         </section>
     );
 }
+

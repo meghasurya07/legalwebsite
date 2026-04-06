@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, FormEvent } from 'react';
 
@@ -79,7 +79,7 @@ export default function RequestDemoForm() {
                 <>
                     {/* Form Header */}
                     <div className="text-center mb-8">
-                        <h2 className="text-3xl font-serif text-neutral-900 mb-3">Request a Demo</h2>
+                        <h2 className="text-3xl font-serif text-neutral-900 mb-3">Request Free Trial</h2>
                         <p className="text-neutral-500 text-sm">
                             See how Wesley can streamline your legal workflows.
                         </p>
@@ -271,3 +271,4 @@ export default function RequestDemoForm() {
         </div>
     );
 }
+

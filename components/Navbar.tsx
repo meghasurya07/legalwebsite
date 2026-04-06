@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -436,7 +436,7 @@ export default function Navbar() {
                         {/* Mobile Footer Actions */}
                         <div className="p-6 border-t border-neutral-200 bg-neutral-50/50">
                             <Link href="/request-demo" className="w-full flex items-center justify-center gap-2 rounded-sm bg-neutral-900 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-black mb-6 shadow-sm cursor-pointer">
-                                Request a Demo
+                                Request Free Trial
                             </Link>
                             <div className="flex items-center justify-between">
                                 <span className="text-neutral-500 text-sm font-medium">Existing user?</span>
@@ -449,4 +449,5 @@ export default function Navbar() {
         </nav>
     );
 }
+
 

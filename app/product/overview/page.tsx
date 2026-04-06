@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -121,10 +121,11 @@ export default function ProductOverviewPage() {
                         href="/request-demo"
                         className="rounded-full bg-neutral-900 px-8 py-4 text-base font-semibold text-white hover:bg-neutral-800 transition-colors whitespace-nowrap"
                     >
-                        Request a Demo
+                        Request Free Trial
                     </Link>
                 </div>
             </section>
         </main>
     );
 }
+

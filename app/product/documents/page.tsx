@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -136,10 +136,11 @@ export default function DocumentsPage() {
                         href="/request-demo"
                         className="flex items-center gap-2 rounded-full bg-neutral-900 px-8 py-4 text-base font-semibold text-white hover:bg-neutral-800 transition-colors whitespace-nowrap"
                     >
-                        Request a Demo <ArrowRight className="w-4 h-4" />
+                        Request Free Trial <ArrowRight className="w-4 h-4" />
                     </Link>
                 </div>
             </section>
         </main>
     );
 }
+

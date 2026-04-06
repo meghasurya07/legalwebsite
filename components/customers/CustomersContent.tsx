@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { motion } from 'framer-motion';
 import SectionWrapper from '@/components/SectionWrapper';
@@ -92,7 +92,7 @@ export default function CustomersContent() {
                             href="/request-demo"
                             className="bg-neutral-900 text-white px-10 py-4 rounded-md font-semibold text-lg hover:bg-neutral-800 transition-colors"
                         >
-                            Request a Demo
+                            Request Free Trial
                         </Link>
                     </motion.div>
                 </div>
@@ -262,7 +262,7 @@ export default function CustomersContent() {
                         href="/request-demo"
                         className="inline-flex items-center gap-2 bg-neutral-900 text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-neutral-800 transition-colors"
                     >
-                        Request a Demo
+                        Request Free Trial
                         <ArrowRight size={20} />
                     </Link>
                 </motion.div>
@@ -270,3 +270,4 @@ export default function CustomersContent() {
         </main>
     );
 }
+

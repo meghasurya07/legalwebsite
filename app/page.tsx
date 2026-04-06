@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -73,7 +73,7 @@ export default function Home() {
                   href="/request-demo"
                   className="group flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-neutral-900 transition-all hover:bg-neutral-100 hover:scale-[1.02] shadow-xl cursor-pointer"
                 >
-                  Request a Demo
+                  Request Free Trial
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link
@@ -151,7 +151,7 @@ export default function Home() {
               Join leading law firms and enterprise legal teams using Wesley to accelerate document review and strategy.
             </p>
             <Link href="/request-demo" className="rounded-sm bg-white px-10 py-4 text-base font-medium text-black hover:bg-neutral-100 transition-all shadow-xl shadow-neutral-900/50">
-              Request a Demo
+              Request Free Trial
             </Link>
           </section>
 
@@ -160,3 +160,4 @@ export default function Home() {
     </main>
   );
 }
+

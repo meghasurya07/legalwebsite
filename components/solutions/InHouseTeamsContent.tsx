@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -142,10 +142,11 @@ export default function InHouseTeamsContent() {
                         href="/request-demo"
                         className="flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-neutral-900 hover:bg-neutral-100 transition-colors whitespace-nowrap"
                     >
-                        Request a Demo <ArrowRight className="w-4 h-4" />
+                        Request Free Trial <ArrowRight className="w-4 h-4" />
                     </Link>
                 </div>
             </section>
         </main>
     );
 }
+
