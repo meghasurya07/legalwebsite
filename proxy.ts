@@ -9,9 +9,9 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Redirect non-www to www
-  if (hostname === 'askwesley.com' || hostname.startsWith('askwesley.com:')) {
-    url.hostname = 'www.askwesley.com';
+  // Redirect www to non-www
+  if (hostname === 'www.askwesley.com' || hostname.startsWith('www.askwesley.com:')) {
+    url.hostname = 'askwesley.com';
     url.protocol = 'https:';
     url.port = '';
     return NextResponse.redirect(url, 301);

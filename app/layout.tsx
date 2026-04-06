@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins, Playfair_Display } from "next/font/google";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
@@ -28,7 +28,7 @@ const playfair = Playfair_Display({
 import StructuredData from "@/components/SEO/StructuredData";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.askwesley.com'),
+  metadataBase: new URL('https://askwesley.com'),
   title: {
     default: "Wesley | AI-Powered Legal Intelligence Platform",
     template: "%s | Wesley - Legal AI Platform"
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.askwesley.com",
+    url: "https://askwesley.com",
     siteName: "Wesley",
     title: "Wesley | AI-Powered Legal Intelligence Platform",
     description: "Wesley is the AI legal platform trusted by leading law firms. Draft contracts, research case law, and review documents with AI precision.",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: 'https://www.askwesley.com',
+    canonical: 'https://askwesley.com',
   },
   robots: {
     index: true,
@@ -108,3 +108,4 @@ export default function RootLayout({
     </html>
   );
 }
+

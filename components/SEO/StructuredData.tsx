@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 const StructuredData = () => {
   const organizationData = {
@@ -6,8 +6,8 @@ const StructuredData = () => {
     '@type': 'Organization',
     'name': 'Wesley',
     'alternateName': 'Ask Wesley',
-    'url': 'https://www.askwesley.com',
-    'logo': 'https://www.askwesley.com/favicon.ico',
+    'url': 'https://askwesley.com',
+    'logo': 'https://askwesley.com/favicon.ico',
     'description': 'The new standard for legal work. AI-powered legal intelligence for modern teams.',
   };
 
@@ -15,7 +15,7 @@ const StructuredData = () => {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     'name': 'Wesley',
-    'url': 'https://www.askwesley.com',
+    'url': 'https://askwesley.com',
   };
 
   return (
@@ -33,3 +33,4 @@ const StructuredData = () => {
 };
 
 export default StructuredData;
+

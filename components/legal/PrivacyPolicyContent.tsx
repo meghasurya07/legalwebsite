@@ -74,7 +74,7 @@ export default function PrivacyPolicyContent() {
                 {/* ================================================================ */}
                 <PolicySection id="applicability" number="1" title="Applicability of this Privacy Policy">
                     <p>
-                        This Privacy Policy applies to Personal Data that Wesley gathers when you visit our website at <a href="https://www.askwesley.com" className="underline hover:text-neutral-900">askwesley.com</a> (our &ldquo;Website&rdquo;), when you interact with our Services, or when you otherwise engage with us through correspondence, events, or support channels.
+                        This Privacy Policy applies to Personal Data that Wesley gathers when you visit our website at <a href="https://askwesley.com" className="underline hover:text-neutral-900">askwesley.com</a> (our &ldquo;Website&rdquo;), when you interact with our Services, or when you otherwise engage with us through correspondence, events, or support channels.
                     </p>
                     <p>
                         Wesley&apos;s platform is built for professional use by law firms, corporate legal departments, and other organizational clients (collectively, our &ldquo;Customers&rdquo;). Our relationship with each Customer is governed by a dedicated agreement&mdash;which may take the form of a platform license, pilot program agreement, evaluation terms, subscription terms of service, or a data processing addendum&mdash;referred to herein as the &ldquo;Customer Agreement.&rdquo;
@@ -498,7 +498,7 @@ export default function PrivacyPolicyContent() {
                                 <p>USA</p>
                                 <p className="mt-3"><strong>Privacy Email:</strong> <a href="mailto:privacy@askwesley.com" className="underline hover:text-neutral-900">privacy@askwesley.com</a></p>
                                 <p><strong>General Inquiries:</strong> <a href="mailto:hello@askwesley.com" className="underline hover:text-neutral-900">hello@askwesley.com</a></p>
-                                <p><strong>Website:</strong> <a href="https://www.askwesley.com" className="underline hover:text-neutral-900">www.askwesley.com</a></p>
+                                <p><strong>Website:</strong> <a href="https://askwesley.com" className="underline hover:text-neutral-900">askwesley.com</a></p>
                             </div>
                         </div>
 
@@ -534,4 +534,5 @@ function PolicySection({ id, number, title, children }: { id: string; number: st
         </section>
     );
 }
+
 

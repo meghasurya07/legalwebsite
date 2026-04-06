@@ -1,6 +1,6 @@
-import { MetadataRoute } from 'next';
+﻿import { MetadataRoute } from 'next';
 
-const BASE_URL = 'https://www.askwesley.com';
+const BASE_URL = 'https://askwesley.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -33,3 +33,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route.priority,
   }));
 }
+
