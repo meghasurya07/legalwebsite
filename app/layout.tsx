@@ -74,6 +74,9 @@ export const metadata: Metadata = {
     description: "Wesley is the AI legal platform trusted by leading law firms. Draft contracts, research case law, and review documents with AI precision.",
     images: ["/og-image.png"],
   },
+  alternates: {
+    canonical: 'https://www.askwesley.com',
+  },
   robots: {
     index: true,
     follow: true,

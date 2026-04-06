@@ -3,21 +3,33 @@ import { MetadataRoute } from 'next';
 const BASE_URL = 'https://www.askwesley.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = [
-    '',
-    '/about',
-    '/solutions',
-    '/customers',
-    '/security',
-    '/blog',
-    '/newsroom',
-    '/request-demo',
-  ].map((route) => ({
-    url: `${BASE_URL}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1 : 0.8,
-  }));
+  const now = new Date();
 
-  return routes;
+  const primaryRoutes = [
+    { path: '', priority: 1.0, changeFrequency: 'weekly' as const },
+    { path: '/about', priority: 0.8, changeFrequency: 'monthly' as const },
+    { path: '/solutions', priority: 0.9, changeFrequency: 'monthly' as const },
+    { path: '/customers', priority: 0.7, changeFrequency: 'monthly' as const },
+    { path: '/security', priority: 0.7, changeFrequency: 'monthly' as const },
+    { path: '/request-demo', priority: 0.9, changeFrequency: 'monthly' as const },
+    { path: '/blog', priority: 0.8, changeFrequency: 'weekly' as const },
+    { path: '/newsroom', priority: 0.6, changeFrequency: 'weekly' as const },
+  ];
+
+  const legalRoutes = [
+    { path: '/legal/privacy-policy', priority: 0.4, changeFrequency: 'yearly' as const },
+  ];
+
+  const productRoutes = [
+    { path: '/product', priority: 0.8, changeFrequency: 'monthly' as const },
+  ];
+
+  const allRoutes = [...primaryRoutes, ...legalRoutes, ...productRoutes];
+
+  return allRoutes.map((route) => ({
+    url: `${BASE_URL}${route.path}`,
+    lastModified: now,
+    changeFrequency: route.changeFrequency,
+    priority: route.priority,
+  }));
 }
