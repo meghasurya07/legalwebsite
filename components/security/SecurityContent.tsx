@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import SectionWrapper from '@/components/SectionWrapper';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -51,7 +51,7 @@ export default function SecurityContent() {
                             href="/request-demo"
                             className="w-full sm:w-auto rounded-full bg-neutral-900 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-neutral-800"
                         >
-                            Request Free Trial
+                            Request a Demo
                         </Link>
                     </motion.div>
                 </div>
@@ -185,7 +185,7 @@ export default function SecurityContent() {
                             href="/request-demo"
                             className="rounded-full bg-neutral-900 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-neutral-800 whitespace-nowrap"
                         >
-                            Request Free Trial
+                            Request a Demo
                         </Link>
                     </div>
                 </div>
